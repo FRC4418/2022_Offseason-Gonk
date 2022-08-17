@@ -21,6 +21,17 @@ public interface Ports {
         // Motors
         int TOP = 15;
         int BOTTOM = 1;
-        int FEEDER = 11;
     }
+
+    public interface Intake{
+        // Motors
+        int INTAKE = 200;
+    }
+
+    public interface Climber{
+        // Motors
+        int CLIMB = 201;
+    }
+
+    
 }
