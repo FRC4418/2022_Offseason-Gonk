@@ -24,9 +24,9 @@ public class shooterShoot extends CommandBase {
     this.shooter = shooter;
     this.driver = driver;
 
-    this.commandedSpeed =
-        IStream.create(() -> driver.getLeftTrigger())
-                .filtered(
+    this.IStream.create(() -> driver.getLeftTrigger())commandedSpeed =
+    
+    .filtered(
                         x -> SLMath.map(x, 0, 1, Settings.Shooter.MIN_SPEED.get(), 
                                         Settings.Shooter.MAX_SPEED.get()),
                         x -> SLMath.spow(x, Settings.Shooter.SPEED_POWER.get()),

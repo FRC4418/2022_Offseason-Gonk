@@ -1,5 +1,7 @@
 package frc.robot.constants;
 
+import edu.wpi.first.wpilibj.Servo;
+
 /** This file contains the different ports of motors, solenoids and sensors */
 public interface Ports {
 
@@ -30,7 +32,10 @@ public interface Ports {
 
     public interface Climber{
         // Motors
-        int CLIMB = 201;
+        int WINCH = 201;
+        int RATCHET = 1;
+        int LCLIMB = 2;
+        int RCLIMB = 3;
     }
 
     
