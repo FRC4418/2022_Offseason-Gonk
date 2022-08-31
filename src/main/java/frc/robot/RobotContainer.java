@@ -32,7 +32,7 @@ public class RobotContainer {
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
 
-  private final DrivetrainDrive drivetrainDrive = new (Drivetrain);
+  private final Drivetrain drivetrainDrive = new Drivetrain();
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */

@@ -4,51 +4,30 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Climber;
 
-import com.stuypulse.stuylib.input.Gamepad;
-import com.stuypulse.stuylib.streams.IStream;
-
-public class climberUp extends CommandBase {
-  private Climber climber;
-  private double startTime;
-  /** Creates a new climberUp. 
-   * @param climber */
-  public climberUp(Climber climber) {
+public class climberDown extends CommandBase {
+  /** Creates a new climberDown. */
+  public climberDown() {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.climber = climber;
-    
-
-    }
+  }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-      climber.servoRelease();
-    startTime = Timer.getFPGATimestamp();
-      
+
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (startTime < Timer.getFPGATimestamp()) {
-      climber.servoRelease();
-      climber.armsDown();
-      climber.ratchetRelease();
-    }
-    else {
-      climber.armsUp();   
-     }
-    
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    climber.ending();
+    
   }
 
   // Returns true when the command should end.
