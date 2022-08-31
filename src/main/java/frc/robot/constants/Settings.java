@@ -110,5 +110,12 @@ public interface Settings {
 
         SmartNumber SPEED_FILTER = new SmartNumber("Shooter Settings/Speed Filtering", 0.125);
     }
+    public interface Climber {
+        SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.0);
+
+        SmartNumber PIN_ANGLE = new SmartNumber("Climber Settings/Pin Angle", 40);
+
+        SmartNumber RATCHET_ANGLE = new SmartNumber("Climber Settings/Ratchet Angle", 0);
+    }
 
 }

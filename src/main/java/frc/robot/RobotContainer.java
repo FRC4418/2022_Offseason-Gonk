@@ -54,6 +54,7 @@ public class RobotContainer {
     driver.getBottomButton().whenHeld(new IntakeLower(intake));
 
 
+    driver.getDPadUp().whenHeld(new climberUp(climber));
   }
 
   /**

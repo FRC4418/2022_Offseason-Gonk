@@ -19,20 +19,20 @@ public class shooterShoot extends CommandBase {
   private final IStream commandedSpeed;
 
 
+
   /** Creates a new ShooterSetRPM. */
   public shooterShoot(Shooter shooter, Gamepad driver) {
     this.shooter = shooter;
     this.driver = driver;
 
-    this.commandedSpeed =
-        IStream.create(() -> driver.getLeftTrigger())
+    this.commandedSpeed = IStream.create(() -> driver.getLeftY())
                 .filtered(
-                        x -> SLMath.map(x, 0, 1, Settings.Shooter.MIN_SPEED.get(), 
-                                        Settings.Shooter.MAX_SPEED.get()),
-                        x -> SLMath.spow(x, Settings.Shooter.SPEED_POWER.get()),
-                        new LowPassFilter(Settings.Shooter.SPEED_FILTER));
+                        x -> SLMath.map(x, -1, 1, -Settings.Drivetrain.MAX_SPEED.get(), Settings.Drivetrain.MAX_SPEED.get()),
+                        x -> SLMath.deadband(x, Settings.Drivetrain.SPEED_DEADBAND.get()),
+                        x -> SLMath.spow(x, Settings.Drivetrain.SPEED_POWER.get()),
+                        new LowPassFilter(Settings.Drivetrain.SPEED_FILTER));
                         
-    addRequirements(shooter);
+
   }
 
   // Called when the command is initially scheduled.
