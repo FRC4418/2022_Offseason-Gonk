@@ -4,6 +4,9 @@
 
 package frc.robot;
 
+import com.stuypulse.stuylib.input.Gamepad;
+import com.stuypulse.stuylib.input.gamepads.AutoGamepad;
+
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -12,6 +15,9 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DrivetrainDrive;
+import frc.robot.commands.IntakeUp;
+import frc.robot.commands.IntakeLower;
+import frc.robot.constants.Ports;
 import frc.robot.subsystems.Climber;
 
 /**
@@ -27,12 +33,14 @@ public class RobotContainer {
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
 
-  private final DrivetrainDrive drivetrainDrive = new (Drivetrain);
+  private final DrivetrainDrive drivetrainDrive = new (Drivetrain());
+  public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
   }
 
   /**
@@ -42,6 +50,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    driver.getTopButton().whenHeld(new IntakeUp(intake));
+    driver.getBottomButton().whenHeld(new IntakeLower(intake));
+
+
   }
 
   /**

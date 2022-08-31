@@ -93,6 +93,11 @@ public interface Settings {
         SmartNumber SPEED_FILTER = new SmartNumber("Feeder Settings/Speed Filtering", 0.03);
     }
 
+    public interface Intake{
+        SmartNumber SPINSPEED = new SmartNumber("Feeder Settings/Spin Speed", 0.0);
+        SmartNumber RAISELOWER = new SmartNumber("Feeder Settings/Raise Lower Feeder", 0.0);
+    }
+
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
         SmartNumber SPEED_DEADBAND = new SmartNumber("Shooter Settings/Speed Deadband", 0.00);

@@ -26,7 +26,9 @@ public interface Ports {
     public interface Intake{
         // Motors
         int INTAKE = 200;
+        int SPINSPEED = 800;
     }
+
 
     public interface Climber{
         // Motors
