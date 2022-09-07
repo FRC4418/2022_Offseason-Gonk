@@ -45,7 +45,7 @@ public class Climber extends SubsystemBase {
   }
 
   public void armsDown() {
-    setRPM = -Settings.Climber.WINCH_POWER.get();
+    setRPM = -(Settings.Climber.WINCH_POWER.get());
   }
   
   public void ending() {

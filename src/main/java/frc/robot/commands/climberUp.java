@@ -34,7 +34,7 @@ public class climberUp extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (startTime + 0.2 < Timer.getFPGATimestamp()) {
+    if (startTime + 0.2 > Timer.getFPGATimestamp()) {
       climber.armsDown();
       climber.ratchetRelease();
     }

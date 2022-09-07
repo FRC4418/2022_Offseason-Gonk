@@ -95,7 +95,11 @@ public interface Settings {
 
     public interface Intake{
         SmartNumber SPINSPEED = new SmartNumber("Feeder Settings/Spin Speed", 0.0);
+
         SmartNumber RAISELOWER = new SmartNumber("Feeder Settings/Raise Lower Feeder", 0.0);
+
+        SmartNumber ROLLERSPEED = new SmartNumber("Feeder Settings/Roller speed", 0.0);
+        SmartNumber UPPERINTAKE = new SmartNumber("Feeder Settings/upper intake", 0.0);
     }
 
     public interface Shooter {
