@@ -7,59 +7,56 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
-// import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.Ports;
+import frc.robot.constants.Settings;
 
 public class Shooter extends SubsystemBase {
 
-  final WPI_TalonFX topMotor = new WPI_TalonFX(Ports.Shooter.TOP);
-  final WPI_TalonFX bottomMotor = new WPI_TalonFX(Ports.Shooter.BOTTOM);
+  final WPI_TalonFX shootMotor = new WPI_TalonFX(Ports.Shooter.TOP);
+  final WPI_TalonSRX bottomMotor = new WPI_TalonSRX(Ports.Shooter.BOTTOM);
 
 
   /** Creates a new Shooter. */
   public Shooter() {
-    topMotor.configFactoryDefault();
+    shootMotor.configFactoryDefault();
 		bottomMotor.configFactoryDefault();
 
 
     // Config closed-loop controls
-    /*
-    topMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
+    
+    shootMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kF, 
                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-		topMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
+		shootMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kP,
                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-		topMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
+    /*
+		shootMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kI, 
                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-    topMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
+    shootMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kD, 
                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
     */
-    topMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
+    shootMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
 		bottomMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
-    topMotor.setInverted(false);
+    shootMotor.setInverted(false);
     bottomMotor.setInverted(true);
 		resetEncoders();
   }
 
-  public void setRPM(Number speed){
-    topMotor.set(ControlMode.PercentOutput, (double) speed);
-		bottomMotor.set(ControlMode.PercentOutput, (double) speed);
-  }
-
   public void setRPM(Number topSpeed, Number bottomSpeed){
-    topMotor.set(ControlMode.PercentOutput, (double) topSpeed);
+    shootMotor.set(ControlMode.PercentOutput, (double) topSpeed);
 		bottomMotor.set(ControlMode.PercentOutput, (double) bottomSpeed);
   }
 
 
 
   public double getTopVelocity() {
-		return topMotor.getSelectedSensorVelocity();
+		return shootMotor.getSelectedSensorVelocity();
 	}
 
 	public double getBottomVelocity() {
@@ -67,7 +64,7 @@ public class Shooter extends SubsystemBase {
 	}
 
   public void resetEncoders() {
-		topMotor.setSelectedSensorPosition(0.d);
+		shootMotor.setSelectedSensorPosition(0.d);
 		bottomMotor.setSelectedSensorPosition(0.d);
 	}
 
