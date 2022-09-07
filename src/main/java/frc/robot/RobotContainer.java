@@ -16,6 +16,7 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
+import frc.robot.commands.climberUp;
 import frc.robot.commands.IntakeLower;
 import frc.robot.constants.Ports;
 import frc.robot.subsystems.Climber;

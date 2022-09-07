@@ -50,6 +50,7 @@ public class Climber extends SubsystemBase {
   
   public void ending() {
     setRPM = 0;
+    ratchet.setAngle(0);
   }
   
 
