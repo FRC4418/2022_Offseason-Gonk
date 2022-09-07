@@ -28,11 +28,9 @@ public class Shooter extends SubsystemBase {
     // Config closed-loop controls
     
     shootMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kF, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kF);
 		shootMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kP,
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kP);
     /*
 		shootMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kI, 
