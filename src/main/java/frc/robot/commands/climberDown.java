@@ -30,7 +30,7 @@ public class climberDown extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    
+    climber.ending();
   }
 
   // Returns true when the command should end.

@@ -14,8 +14,8 @@ import com.stuypulse.stuylib.streams.IStream;
 public class climberUp extends CommandBase {
   private Climber climber;
   private double startTime;
-  /** Creates a new climberUp. 
-   * @param climber */
+ 
+
   public climberUp(Climber climber) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.climber = climber;
@@ -26,7 +26,7 @@ public class climberUp extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-      climber.servoRelease();
+    climber.servoRelease();
     startTime = Timer.getFPGATimestamp();
       
   }
@@ -34,8 +34,7 @@ public class climberUp extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (startTime < Timer.getFPGATimestamp()) {
-      climber.servoRelease();
+    if (startTime + 0.2 < Timer.getFPGATimestamp()) {
       climber.armsDown();
       climber.ratchetRelease();
     }
