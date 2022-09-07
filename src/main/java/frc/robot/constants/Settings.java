@@ -47,7 +47,7 @@ public interface Settings {
             }
 
             public interface PID {
-                double kSlot = 0;
+                int kSlot = 0;
                 double kF = 0;
                 double kP = 0;
                 double kI = 0;
