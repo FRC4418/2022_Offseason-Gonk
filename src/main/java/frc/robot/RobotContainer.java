@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
+import frc.robot.commands.ConveryorIdle;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ShooterEject;
@@ -49,7 +50,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    shooter.setDefaultCommand(new ConveyorIdle(shooter, intake));
+    shooter.setDefaultCommand(new ConveryorIdle(shooter));
     intake.setDefaultCommand(new IntakeUp(intake));
   }
 
