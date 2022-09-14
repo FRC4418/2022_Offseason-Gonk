@@ -16,6 +16,8 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
+import frc.robot.commands.ShooterEject;
+import frc.robot.commands.ShooterShoot;
 import frc.robot.commands.blankAuto;
 import frc.robot.commands.climberDown;
 import frc.robot.commands.climberUp;
@@ -47,7 +49,8 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-
+    shooter.setDefaultCommand(new ConveyorIdle(shooter, intake));
+    intake.setDefaultCommand(new IntakeUp(intake));
   }
 
   /**
@@ -63,6 +66,9 @@ public class RobotContainer {
 
     driver.getDPadUp().whenHeld(new climberUp(climber));
     driver.getDPadDown().whenHeld(new climberDown(climber));
+
+    driver.getRightButton().whenHeld(new ShooterShoot(shooter, intake));
+    driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
   }
 
   /**
