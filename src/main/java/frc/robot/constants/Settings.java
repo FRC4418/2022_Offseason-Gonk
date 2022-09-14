@@ -81,13 +81,13 @@ public interface Settings {
     }
 
     public interface Intake{
-        SmartNumber SPIN_SPEED = new SmartNumber("Feeder Settings/Spin Speed", 0.0);
+        SmartNumber SPIN_SPEED = new SmartNumber("Feeder and Shooter Settings/Roller Spin Speed", 0.0);
 
-        SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder Settings/Intake Position Up", 0.0);
+        SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder and Shooter Settings/Intake Position Up", 0.0);
 
-        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder Settings/Intake Position Down", 0.0);
+        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 0.0);
 
-        SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Shooter Settings/Upper intake", 0.0);
+        SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Upper Intake Shoot Speed", 0.0);
 
         public interface PID {
             int kSlot = 0;
@@ -101,14 +101,14 @@ public interface Settings {
 
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
-        SmartNumber SHOOT_SPEED = new SmartNumber("Shooter Settings/Shooter Speed", 1.0);
+        SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooter Speed", 1.0);
     }
     public interface Climber {
         SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.0);
 
-        SmartNumber PIN_ANGLE = new SmartNumber("Climber Settings/Pin Angle", 40);
+        SmartNumber RATCHET_ENGAGE_ANGLE = new SmartNumber("Climber Settings/Ratchet Engage Angle", 40);
 
-        SmartNumber RATCHET_ANGLE = new SmartNumber("Climber Settings/Ratchet Angle", 0);
+        SmartNumber RATCHET_RELEASE_ANGLE = new SmartNumber("Climber Settings/Ratchet Release Angle", 0);
     }
 
 }
