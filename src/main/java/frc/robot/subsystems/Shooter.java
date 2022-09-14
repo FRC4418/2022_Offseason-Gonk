@@ -53,6 +53,9 @@ public class Shooter extends SubsystemBase {
     shootMotor.set(ControlMode.Velocity, (double) Velocity);
   }
 
+  public void setPercentOutput(Number speed){
+    shootMotor.set(ControlMode.PercentOutput, (double) speed);
+  }
 
 
   public double getTopVelocity() {
