@@ -139,6 +139,37 @@ public class Drivetrain extends SubsystemBase {
       tankDrive(lSpeed, rSpeed);
   }
 
+  // Drives using curvature drive, but inverts the steering when driving backwards
+  public void impulseDrive(double xSpeed, double zRotation) {
+    // If the speed is negative and the steering setpoint is small, then invert the
+    // steering controls
+    if (xSpeed < -0.05 && zRotation < Settings.Drivetrain.INVERT_ANGLE_THREASHOLD.get()) {
+      curvatureDrive(xSpeed, -zRotation); // Inverted steering
+    } else {
+      curvatureDrive(xSpeed, zRotation); // Standard steering
+    }
+  }
+  /*
+   * Notes on precursor to impulseDrive that was tested at WWW parade
+   * 
+   * Problems:
+   * funny things happen when both triggers are pressed
+   * with turn command given left trigger causes small jerky motions
+   * lowpass filter can be bypassed by pressing both triggers then going into
+   * reverse
+   * 
+   * Ideal solution:
+   * smooth transition in throttle from forword to reverse -> should be handled by
+   * having both triggers on one stream and letting the lowpass sort it out
+   * transition only when the turn rate is small, to ease turning transition ->
+   * handled by invering logic
+   * defined behavor when both triggers are pressed -> handled by merging into one
+   * angle steam
+   * 
+   * Found issues in past parade version:
+   * each trigger was mapped -1 to 1 so the final values were halved
+   */
+
   // Drives using curvature drive algorithm with automatic quick turn
   public void curvatureDrive(double xSpeed, double zRotation) {
       this.curvatureDrive(xSpeed, zRotation, Settings.Drivetrain.BASE_TURNING_SPEED.get());
