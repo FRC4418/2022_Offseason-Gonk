@@ -1,6 +1,6 @@
-Y
+Y - Intake Up
 B - Shoot
-A
+A - Intake Down
 X - Eject
 
 L Joystick Y 
