@@ -13,8 +13,6 @@ import frc.robot.constants.Ports;
 import frc.robot.constants.Settings;
 
 public class Climber extends SubsystemBase {
-  Servo servoRight = new Servo(Ports.Climber.RCLIMB);
-  Servo servoLeft = new Servo(Ports.Climber.LCLIMB);
   Servo ratchet = new Servo(Ports.Climber.RATCHET);
   double setRPM;
   double setPin;

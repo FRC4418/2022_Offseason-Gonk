@@ -21,24 +21,21 @@ public interface Ports {
 
     public interface Shooter {
         // Motors
-        int TOP = 15;
-        int BOTTOM = 1;
+        int TOP = 22;
     }
 
     public interface Intake{
         // Motors
-        int INTAKE = 200;
-        int UPPER_INTAKE = 209;
-        int SPIN_SPEED = 800;
+        int INTAKE = 12;
+        int UPPER_INTAKE = 21;
+        int SPIN_ROLLERS = 11;
     }
 
 
     public interface Climber{
         // Motors
-        int WINCH = 201;
+        int WINCH = 31;
         int RATCHET = 1;
-        int LCLIMB = 2;
-        int RCLIMB = 3;
     }
 
     

@@ -17,7 +17,7 @@ import frc.robot.constants.Settings;
 
 public class Intake extends SubsystemBase {
 final static WPI_TalonFX moveIntake = new WPI_TalonFX(Ports.Intake.INTAKE);
-final static WPI_TalonSRX spinRollers = new WPI_TalonSRX(Ports.Intake.SPIN_SPEED);
+final static WPI_TalonSRX spinRollers = new WPI_TalonSRX(Ports.Intake.SPIN_ROLLERS);
 final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE);
 
   /** Creates a new Intake. */
