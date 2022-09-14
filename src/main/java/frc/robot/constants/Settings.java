@@ -80,39 +80,19 @@ public interface Settings {
         }
     }
 
-    public interface Feeder {
-        // Low Pass Filter and deadband for Feeder Controls
-        SmartNumber SPEED_DEADBAND = new SmartNumber("Feeder Settings/Speed Deadband", 0.00);
-
-        SmartNumber SPEED_POWER = new SmartNumber("Feeder Settings/Speed Power", 1.0);
-
-        SmartNumber MAX_SPEED = new SmartNumber("Feeder Settings/Max Speed", 0.7);
-
-        SmartNumber MIN_SPEED = new SmartNumber("Feeder Settings/Min Speed", 0);
-
-        SmartNumber SPEED_FILTER = new SmartNumber("Feeder Settings/Speed Filtering", 0.03);
-    }
-
     public interface Intake{
-        SmartNumber SPINSPEED = new SmartNumber("Feeder Settings/Spin Speed", 0.0);
+        SmartNumber SPIN_SPEED = new SmartNumber("Feeder Settings/Spin Speed", 0.0);
 
-        SmartNumber RAISELOWER = new SmartNumber("Feeder Settings/Raise Lower Feeder", 0.0);
+        SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder Settings/Intake Position Up", 0.0);
 
-        SmartNumber ROLLERSPEED = new SmartNumber("Feeder Settings/Roller speed", 0.0);
-        SmartNumber UPPERINTAKE = new SmartNumber("Feeder Settings/upper intake", 0.0);
+        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder Settings/Intake Position Down", 0.0);
+
+        SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Shooter Settings/Upper intake", 0.0);
     }
 
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
-        SmartNumber SPEED_DEADBAND = new SmartNumber("Shooter Settings/Speed Deadband", 0.00);
-
-        SmartNumber SPEED_POWER = new SmartNumber("Shooter Settings/Speed Power", 1.0);
-
-        SmartNumber MAX_SPEED = new SmartNumber("Shooter Settings/Max Speed", 0.5);
-
-        SmartNumber MIN_SPEED = new SmartNumber("Shooter Settings/Min Speed", 0);
-
-        SmartNumber SPEED_FILTER = new SmartNumber("Shooter Settings/Speed Filtering", 0.125);
+        SmartNumber SHOOT_SPEED = new SmartNumber("Shooter Settings/Shooter Speed", 1.0);
     }
     public interface Climber {
         SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.0);

@@ -16,37 +16,27 @@ import frc.robot.constants.Ports;
 import frc.robot.constants.Settings;
 
 public class Intake extends SubsystemBase {
-final WPI_TalonFX MOVEINTAKE = new WPI_TalonFX(Ports.Intake.INTAKE);
-final WPI_TalonSRX SPINROLLERS = new WPI_TalonSRX(Ports.Intake.SPINSPEED);
-final WPI_TalonSRX UPPER_INTAKE = new WPI_TalonSRX(Ports.Intake.UPPERINTAKE);
-
-double setRPM;
+final static WPI_TalonFX moveIntake = new WPI_TalonFX(Ports.Intake.INTAKE);
+final static WPI_TalonSRX spinRollers = new WPI_TalonSRX(Ports.Intake.SPIN_SPEED);
+final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE);
 
   /** Creates a new Intake. */
-  public Intake() {
-    
-
-  }
+  public Intake() {}
   
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
   
-  public void setRPMForIntake(){
-    UPPER_INTAKE.set(Settings.Intake.UPPERINTAKE.get());
-    SPINROLLERS.set(Settings.Intake.ROLLERSPEED.get());
+  public static void setIntakePosition(Number position){
+    moveIntake.set(ControlMode.Position, (double) position);
   }
   
-  public void raiseIntake(Number speed){
-    
-  }
-  public void lowerIntake(){
-    MOVEINTAKE.set(Settings.Intake.RAISELOWER.get());
+  public static void setIntakeRPM(Number speed){
+    spinRollers.set(ControlMode.PercentOutput, (double) speed);
   }
   
-  public void upIntake(){
-
+  public static void upIntake(Number Percent){
+    upIntake.set(ControlMode.PercentOutput, (Double) Percent);
   }
-  
 }

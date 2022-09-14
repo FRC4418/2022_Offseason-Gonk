@@ -31,13 +31,16 @@ public class IntakeLower extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
+    Intake.setIntakePosition(Settings.Intake.INTAKE_POSITION_DOWN.get());
+    Intake.setIntakeRPM(Settings.Intake.SPIN_SPEED.get());
   }
 
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    Intake.setIntakeRPM(0.0);
+  }
 
   // Returns true when the command should end.
   @Override

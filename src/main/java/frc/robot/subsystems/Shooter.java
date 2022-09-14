@@ -15,7 +15,7 @@ import frc.robot.constants.Settings;
 
 public class Shooter extends SubsystemBase {
 
-  final WPI_TalonFX shootMotor = new WPI_TalonFX(Ports.Shooter.TOP);
+  final static WPI_TalonFX shootMotor = new WPI_TalonFX(Ports.Shooter.TOP);
   final WPI_TalonSRX bottomMotor = new WPI_TalonSRX(Ports.Shooter.BOTTOM);
 
 
@@ -31,14 +31,12 @@ public class Shooter extends SubsystemBase {
                                Settings.Drivetrain.Motion.PID.kF);
 		shootMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
                                Settings.Drivetrain.Motion.PID.kP);
-    /*
+    
 		shootMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kI, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kI);
     shootMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kD, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
-    */
+                               Settings.Drivetrain.Motion.PID.kD);
+    
     shootMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
 		bottomMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
     shootMotor.setInverted(false);
@@ -49,6 +47,10 @@ public class Shooter extends SubsystemBase {
   public void setRPM(Number topSpeed, Number bottomSpeed){
     shootMotor.set(ControlMode.PercentOutput, (double) topSpeed);
 		bottomMotor.set(ControlMode.PercentOutput, (double) bottomSpeed);
+  }
+
+  public static void setVelocity(Number Velocity){
+    shootMotor.set(ControlMode.Velocity, (double) Velocity);
   }
 
 

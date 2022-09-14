@@ -28,8 +28,8 @@ public interface Ports {
     public interface Intake{
         // Motors
         int INTAKE = 200;
-        int UPPERINTAKE = 209;
-        int SPINSPEED = 800;
+        int UPPER_INTAKE = 209;
+        int SPIN_SPEED = 800;
     }
 
 

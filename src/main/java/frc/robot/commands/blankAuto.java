@@ -3,39 +3,23 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
-import com.stuypulse.stuylib.input.Gamepad;
-import com.stuypulse.stuylib.math.SLMath;
-import com.stuypulse.stuylib.streams.IStream;
-import com.stuypulse.stuylib.streams.filters.LowPassFilter;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.constants.Settings;
-import frc.robot.subsystems.Intake;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class IntakeUp extends CommandBase {
-  private Intake intake;
-  private Gamepad driver;
-
-  /** Creates a new Intake. */
-  public IntakeUp(Intake intake) {
+public class blankAuto extends CommandBase {
+  /** Creates a new blankAuto. */
+  public blankAuto() {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.intake = intake;
-    //this.driver = driver;
-
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    Intake.setIntakePosition(Settings.Intake.INTAKE_POSITION_UP.get());
-  }
+  public void execute() {}
+
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}

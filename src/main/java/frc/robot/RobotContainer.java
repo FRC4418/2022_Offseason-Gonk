@@ -16,6 +16,7 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
+import frc.robot.commands.blankAuto;
 import frc.robot.commands.climberDown;
 import frc.robot.commands.climberUp;
 import frc.robot.commands.IntakeLower;
@@ -37,6 +38,9 @@ public class RobotContainer {
   
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive drivetrainDrive = new DrivetrainDrive(drivetrain, driver);
+
+  public final blankAuto blankAuto = new blankAuto();
+
   
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -68,7 +72,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return blankAuto;
   }
 }
 
