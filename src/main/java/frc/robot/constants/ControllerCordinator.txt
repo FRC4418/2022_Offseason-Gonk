@@ -1,7 +1,7 @@
-Y
-B
-A
-X
+Y - Intake Up
+B - Shoot
+A - Intake Down
+X - Eject
 
 L Joystick Y 
 L Joystick X - Steering
