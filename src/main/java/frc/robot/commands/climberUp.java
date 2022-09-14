@@ -26,7 +26,7 @@ public class climberUp extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    climber.servoRelease();
+    climber.ratchetRelease();
     startTime = Timer.getFPGATimestamp();
       
   }

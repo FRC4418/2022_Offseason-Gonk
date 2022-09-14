@@ -16,13 +16,11 @@ import frc.robot.constants.Settings;
 public class Shooter extends SubsystemBase {
 
   final static WPI_TalonFX shootMotor = new WPI_TalonFX(Ports.Shooter.TOP);
-  final WPI_TalonSRX bottomMotor = new WPI_TalonSRX(Ports.Shooter.BOTTOM);
 
 
   /** Creates a new Shooter. */
   public Shooter() {
     shootMotor.configFactoryDefault();
-		bottomMotor.configFactoryDefault();
 
 
     // Config closed-loop controls
@@ -38,15 +36,12 @@ public class Shooter extends SubsystemBase {
                                Settings.Drivetrain.Motion.PID.kD);
     
     shootMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
-		bottomMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 10);
     shootMotor.setInverted(false);
-    bottomMotor.setInverted(true);
 		resetEncoders();
   }
 
   public void setRPM(Number topSpeed, Number bottomSpeed){
     shootMotor.set(ControlMode.PercentOutput, (double) topSpeed);
-		bottomMotor.set(ControlMode.PercentOutput, (double) bottomSpeed);
   }
 
   public static void setVelocity(Number Velocity){
@@ -62,13 +57,8 @@ public class Shooter extends SubsystemBase {
 		return shootMotor.getSelectedSensorVelocity();
 	}
 
-	public double getBottomVelocity() {
-		return bottomMotor.getSelectedSensorVelocity();
-	}
-
   public void resetEncoders() {
 		shootMotor.setSelectedSensorPosition(0.d);
-		bottomMotor.setSelectedSensorPosition(0.d);
 	}
 
   @Override

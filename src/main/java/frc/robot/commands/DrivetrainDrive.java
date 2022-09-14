@@ -52,11 +52,7 @@ public class DrivetrainDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (driver.getRawLeftButton()) {
-      drivetrain.arcadeDrive(commandedSpeed.get() - 0.1, commandedAngle.get());
-    } else {
-      drivetrain.curvatureDrive(commandedSpeed.get(), commandedAngle.get());
-    }
+    drivetrain.curvatureDrive(commandedSpeed.get(), commandedAngle.get());
   }
 
   // Called once the command ends or is interrupted.

@@ -1,6 +1,5 @@
 package frc.robot.constants;
 
-import edu.wpi.first.wpilibj.Servo;
 
 /** This file contains the different ports of motors, solenoids and sensors */
 public interface Ports {

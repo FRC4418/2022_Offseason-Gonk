@@ -88,6 +88,15 @@ public interface Settings {
         SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder Settings/Intake Position Down", 0.0);
 
         SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Shooter Settings/Upper intake", 0.0);
+
+        public interface PID {
+            int kSlot = 0;
+            double kF = 0;
+            double kP = 0.03;
+            double kI = 0;
+            double kD = 0.001;
+            double kTimeoutMs = 50;
+        }
     }
 
     public interface Shooter {

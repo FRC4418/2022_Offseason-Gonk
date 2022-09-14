@@ -26,16 +26,10 @@ public class Climber extends SubsystemBase {
     double rAngle = Settings.Climber.RATCHET_ANGLE.get();
      ratchet.setAngle(rAngle);
   }
-  public void servoRelease() {
-    setPin = Settings.Climber.PIN_ANGLE.get();
-    servoLeft.setAngle(setPin);
-    servoRight.setAngle(setPin);
-  }
   
-  public void servoEngage() {
+  public void ratchetEngage() {
     setPin = Settings.Climber.PIN_ANGLE.get();
-    servoRight.setAngle(0);
-    servoLeft.setAngle(0);
+    ratchet.setAngle(setPin);
   }
 
   public void armsUp() {

@@ -103,6 +103,7 @@ public class Drivetrain extends SubsystemBase {
 
   // Drives using tank drive
   public void tankDrive(double left, double right) {
+    
     differentialDrive.tankDrive(left, right, false);
   }
 
@@ -146,5 +147,6 @@ public class Drivetrain extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    differentialDrive.feed();
   }
 }

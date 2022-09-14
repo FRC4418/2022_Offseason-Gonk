@@ -22,7 +22,7 @@ public class IntakeUp extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
     //this.driver = driver;
-
+    addRequirements(intake);
   }
 
   // Called when the command is initially scheduled.

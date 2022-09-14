@@ -13,6 +13,7 @@ public class ConveryorIdle extends CommandBase {
   /** Creates a new ConveryorIdle. */
   public ConveryorIdle(Shooter shooter) {
     this.shooter = shooter;
+    addRequirements(shooter);
   }
 
   // Called when the command is initially scheduled.

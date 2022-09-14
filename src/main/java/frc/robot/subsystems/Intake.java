@@ -21,13 +21,37 @@ final static WPI_TalonSRX spinRollers = new WPI_TalonSRX(Ports.Intake.SPIN_ROLLE
 final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE);
 
   /** Creates a new Intake. */
-  public Intake() {}
+  public Intake() {
+    moveIntake.configFactoryDefault();
+
+
+    // Config closed-loop controls
+    
+    moveIntake.config_kF(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kF);
+    moveIntake.config_kP(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kP);
+    
+    moveIntake.config_kI(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kI);
+    moveIntake.config_kD(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kD);
+    
+    moveIntake.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+    moveIntake.setInverted(false);
+		resetEncoders();
+
+  }
   
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
   
+  public void resetEncoders() {
+		moveIntake.setSelectedSensorPosition(0.d);
+	}
+
   public static void setIntakePosition(Number position){
     moveIntake.set(ControlMode.Position, (double) position);
   }
