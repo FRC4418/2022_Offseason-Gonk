@@ -13,10 +13,7 @@ public class ShooterShoot extends CommandBase {
   private Shooter shooter;
   private Intake intake;
 
-
-  /** Creates a new ShooterShoot. */
   public ShooterShoot(Shooter shooter, Intake intake) {
-    // Use addRequirements() here to declare subsystem dependencies.
     this.shooter = shooter;
     this.intake = intake;
   }

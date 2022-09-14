@@ -15,7 +15,7 @@ public class Climber extends SubsystemBase {
   double setRPM;
   double setPin;
   final WPI_TalonFX winch = new WPI_TalonFX(Ports.Climber.WINCH);
-  /** Creates a new Climber. */
+
   public Climber() {
     winch.configFactoryDefault();
 		winch.setInverted(false);

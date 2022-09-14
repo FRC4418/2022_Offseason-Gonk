@@ -28,7 +28,6 @@ public class Drivetrain extends SubsystemBase {
 
   DifferentialDrive differentialDrive = new DifferentialDrive(leftGroup, rightGroup);
 
-  /** Creates a new Drivetrain. */
   public Drivetrain() {
     leftFrontMotor.configFactoryDefault();
 		leftBackMotor.configFactoryDefault();
@@ -41,30 +40,14 @@ public class Drivetrain extends SubsystemBase {
     // Config closed-loop controls
     /*
     leftFrontMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kF, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kF);
 		leftFrontMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kP,
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kP);
+    
 		leftFrontMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kI, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kI);
     leftFrontMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
-                               Settings.Drivetrain.Motion.PID.kD, 
-                               Settings.Drivetrain.Motion.PID.kTimeoutMs);
-
-    rightFrontMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
-                                Settings.Drivetrain.Motion.PID.kF, 
-                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-		rightFrontMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
-                                Settings.Drivetrain.Motion.PID.kP, 
-                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-		rightFrontMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
-                                Settings.Drivetrain.Motion.PID.kI, 
-                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
-    rightFrontMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
-                                Settings.Drivetrain.Motion.PID.kD, 
-                                Settings.Drivetrain.Motion.PID.kTimeoutMs);
+                               Settings.Drivetrain.Motion.PID.kD);
 		*/
     
     // Config integrated sensors (built-in encoders)

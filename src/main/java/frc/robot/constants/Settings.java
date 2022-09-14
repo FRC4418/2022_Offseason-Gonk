@@ -102,6 +102,15 @@ public interface Settings {
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
         SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooter Speed", 1.0);
+
+        public interface PID {
+            int kSlot = 0;
+            double kF = 0;
+            double kP = 0;
+            double kI = 0;
+            double kD = 0;
+            double kTimeoutMs = 50;
+        }
     }
     public interface Climber {
         SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.0);

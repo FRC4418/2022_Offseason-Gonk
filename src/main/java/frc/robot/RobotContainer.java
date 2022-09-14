@@ -19,9 +19,9 @@ import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ShooterEject;
 import frc.robot.commands.ShooterShoot;
-import frc.robot.commands.blankAuto;
-import frc.robot.commands.climberDown;
-import frc.robot.commands.climberUp;
+import frc.robot.commands.BlankAuto;
+import frc.robot.commands.ClimberDown;
+import frc.robot.commands.ClimberUp;
 import frc.robot.commands.IntakeLower;
 import frc.robot.constants.Ports;
 import frc.robot.subsystems.Climber;
@@ -33,7 +33,7 @@ import frc.robot.subsystems.Climber;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  // The robot's subsystems and commands
   private final Drivetrain drivetrain = new Drivetrain();
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
@@ -42,7 +42,7 @@ public class RobotContainer {
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive drivetrainDrive = new DrivetrainDrive(drivetrain, driver);
 
-  public final blankAuto blankAuto = new blankAuto();
+  public final BlankAuto blankAuto = new BlankAuto();
 
   
 
@@ -50,6 +50,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    
     shooter.setDefaultCommand(new ConveryorIdle(shooter));
     intake.setDefaultCommand(new IntakeUp(intake));
   }
@@ -65,8 +66,8 @@ public class RobotContainer {
     driver.getBottomButton().whenHeld(new IntakeLower(intake));
 
 
-    driver.getDPadUp().whenHeld(new climberUp(climber));
-    driver.getDPadDown().whenHeld(new climberDown(climber));
+    driver.getDPadUp().whenHeld(new ClimberUp(climber));
+    driver.getDPadDown().whenHeld(new ClimberDown(climber));
 
     driver.getRightButton().whenHeld(new ShooterShoot(shooter, intake));
     driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));

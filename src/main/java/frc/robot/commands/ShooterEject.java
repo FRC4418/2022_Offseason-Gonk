@@ -12,11 +12,10 @@ import frc.robot.constants.Settings;
 public class ShooterEject extends CommandBase {
   private Shooter shooter;
   private Intake intake;
-  /** Creates a new ShooterEject. */
+
   public ShooterEject(Shooter shooter, Intake intake) {
     this.shooter = shooter;
     this.intake = intake;
-    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
