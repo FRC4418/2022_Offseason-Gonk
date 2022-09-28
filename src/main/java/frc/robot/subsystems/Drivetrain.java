@@ -126,7 +126,7 @@ public class Drivetrain extends SubsystemBase {
   public void impulseDrive(double xSpeed, double zRotation) {
     // If the speed is negative and the steering setpoint is small, then invert the
     // steering controls
-    if (xSpeed < -0.05 && zRotation < Settings.Drivetrain.INVERT_ANGLE_THREASHOLD.get()) {
+    if (xSpeed < -0.05 && Math.abs(zRotation) < Settings.Drivetrain.INVERT_ANGLE_THREASHOLD.get()) {
       curvatureDrive(xSpeed, -zRotation); // Inverted steering
     } else {
       curvatureDrive(xSpeed, zRotation); // Standard steering
