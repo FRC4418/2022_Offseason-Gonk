@@ -4,10 +4,8 @@
 
 package frc.robot.subsystems;
 
-import javax.sound.sampled.Port;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import edu.wpi.first.wpilibj.Servo;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.Ports;
 import frc.robot.constants.Settings;
@@ -17,18 +15,18 @@ public class Climber extends SubsystemBase {
   double setRPM;
   double setPin;
   final WPI_TalonFX winch = new WPI_TalonFX(Ports.Climber.WINCH);
-  /** Creates a new Climber. */
+
   public Climber() {
     winch.configFactoryDefault();
 		winch.setInverted(false);
   }
   public void ratchetRelease() {
-    double rAngle = Settings.Climber.RATCHET_ANGLE.get();
+    double rAngle = Settings.Climber.RATCHET_RELEASE_ANGLE.get();
      ratchet.setAngle(rAngle);
   }
   
   public void ratchetEngage() {
-    setPin = Settings.Climber.PIN_ANGLE.get();
+    setPin = Settings.Climber.RATCHET_ENGAGE_ANGLE.get();
     ratchet.setAngle(setPin);
   }
 

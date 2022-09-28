@@ -10,7 +10,6 @@ import frc.robot.subsystems.Shooter;
 public class ConveryorIdle extends CommandBase {
   private Shooter shooter;
 
-  /** Creates a new ConveryorIdle. */
   public ConveryorIdle(Shooter shooter) {
     this.shooter = shooter;
     addRequirements(shooter);

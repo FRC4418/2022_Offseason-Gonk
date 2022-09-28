@@ -8,9 +8,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.constants.Ports;
 import frc.robot.constants.Settings;
@@ -20,13 +18,10 @@ final static WPI_TalonFX moveIntake = new WPI_TalonFX(Ports.Intake.INTAKE);
 final static WPI_TalonSRX spinRollers = new WPI_TalonSRX(Ports.Intake.SPIN_ROLLERS);
 final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE);
 
-  /** Creates a new Intake. */
   public Intake() {
     moveIntake.configFactoryDefault();
 
-
     // Config closed-loop controls
-    
     moveIntake.config_kF(Settings.Intake.PID.kSlot, 
                                Settings.Intake.PID.kF);
     moveIntake.config_kP(Settings.Intake.PID.kSlot, 

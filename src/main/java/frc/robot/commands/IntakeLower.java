@@ -3,26 +3,16 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.commands;
-import com.stuypulse.stuylib.input.Gamepad;
-import com.stuypulse.stuylib.math.SLMath;
-import com.stuypulse.stuylib.streams.IStream;
-import com.stuypulse.stuylib.streams.filters.LowPassFilter;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.constants.Settings;
 import frc.robot.subsystems.Intake;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class IntakeLower extends CommandBase {
   private Intake intake;
-  private Gamepad driver;
 
-  /** Creates a new Intake. */
   public IntakeLower(Intake intake) {
-    // Use addRequirements() here to declare subsystem dependencies.
     this.intake = intake;
-    //this.driver = driver;
-
   }
 
   // Called when the command is initially scheduled.

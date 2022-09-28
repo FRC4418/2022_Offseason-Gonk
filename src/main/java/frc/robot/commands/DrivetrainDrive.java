@@ -19,7 +19,6 @@ public class DrivetrainDrive extends CommandBase {
 
   private final IStream speedSetpoint, angleSetpoint;
 
-  /** Creates a new DefaultDrive. */
   public DrivetrainDrive(Drivetrain drivetrain, Gamepad driver) {
     this.drivetrain = drivetrain;
     this.driver = driver;

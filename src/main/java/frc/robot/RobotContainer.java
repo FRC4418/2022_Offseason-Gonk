@@ -18,7 +18,7 @@ import frc.robot.commands.ConveryorIdle;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ShooterEject;
-import frc.robot.commands.ShooterShoot;
+import frc.robot.commands.shooterShoot;
 import frc.robot.commands.blankAuto;
 import frc.robot.commands.climberDown;
 import frc.robot.commands.climberUp;
@@ -33,7 +33,7 @@ import frc.robot.subsystems.Climber;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  // The robot's subsystems and commands
   private final Drivetrain drivetrain = new Drivetrain();
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
@@ -51,6 +51,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
     drivetrain.setDefaultCommand(new DrivetrainDrive(drivetrain, driver));
+    
     shooter.setDefaultCommand(new ConveryorIdle(shooter));
     intake.setDefaultCommand(new IntakeUp(intake));
   }
@@ -69,7 +70,7 @@ public class RobotContainer {
     driver.getDPadUp().whenHeld(new climberUp(climber));
     driver.getDPadDown().whenHeld(new climberDown(climber));
 
-    driver.getRightButton().whenHeld(new ShooterShoot(shooter, intake));
+    driver.getRightButton().whenHeld(new shooterShoot(shooter, intake));
     driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
   }
 

@@ -9,14 +9,11 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.constants.Settings;
 import frc.robot.subsystems.Intake;
 
-public class ShooterShoot extends CommandBase {
+public class shooterShoot extends CommandBase {
   private Shooter shooter;
   private Intake intake;
 
-
-  /** Creates a new ShooterShoot. */
-  public ShooterShoot(Shooter shooter, Intake intake) {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public shooterShoot(Shooter shooter, Intake intake) {
     this.shooter = shooter;
     this.intake = intake;
   }

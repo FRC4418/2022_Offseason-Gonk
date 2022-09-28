@@ -7,12 +7,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Climber;
 
-public class climberDown extends CommandBase {
+public class ClimberDown extends CommandBase {
   private Climber climber;
-  /** Creates a new climberDown. */
-  public climberDown(Climber climber) {
+
+  public ClimberDown(Climber climber) {
     this.climber = climber;
-    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
