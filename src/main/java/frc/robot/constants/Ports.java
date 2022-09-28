@@ -34,7 +34,7 @@ public interface Ports {
     public interface Climber{
         // Motors
         int WINCH = 31;
-        int RATCHET = 1;
+        int RATCHET = 4;
     }
 
     

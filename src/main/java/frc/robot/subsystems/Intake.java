@@ -53,6 +53,23 @@ final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE)
     upIntake.setInverted(true);
 		resetEncoders();
 
+    spinRollers.configFactoryDefault();
+
+    // Config closed-loop controls
+    spinRollers.config_kF(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kF);
+    spinRollers.config_kP(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kP);
+    
+    spinRollers.config_kI(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kI);
+    spinRollers.config_kD(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kD);
+    
+    spinRollers.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+    spinRollers.setInverted(true);
+		resetEncoders();
+
   }
   
   @Override

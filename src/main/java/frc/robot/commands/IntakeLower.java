@@ -23,6 +23,8 @@ public class IntakeLower extends CommandBase {
   public void execute() {
     Intake.setIntakePosition(Settings.Intake.INTAKE_POSITION_DOWN.get());
     Intake.setIntakeRPM(Settings.Intake.SPIN_SPEED.get());
+    Intake.upIntake(Settings.Intake.SPIN_SPEED.get());
+
   }
 
 
@@ -30,6 +32,7 @@ public class IntakeLower extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     Intake.setIntakeRPM(0.0);
+    intake.upIntake(0.0);
   }
 
   // Returns true when the command should end.
