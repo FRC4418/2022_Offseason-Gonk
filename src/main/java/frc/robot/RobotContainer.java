@@ -18,10 +18,10 @@ import frc.robot.commands.ConveryorIdle;
 import frc.robot.commands.DrivetrainDrive;
 import frc.robot.commands.IntakeUp;
 import frc.robot.commands.ShooterEject;
-import frc.robot.commands.ShooterShoot;
-import frc.robot.commands.BlankAuto;
-import frc.robot.commands.ClimberDown;
-import frc.robot.commands.ClimberUp;
+import frc.robot.commands.shooterShoot;
+import frc.robot.commands.blankAuto;
+import frc.robot.commands.climberDown;
+import frc.robot.commands.climberUp;
 import frc.robot.commands.IntakeLower;
 import frc.robot.constants.Ports;
 import frc.robot.subsystems.Climber;
@@ -42,7 +42,7 @@ public class RobotContainer {
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive drivetrainDrive = new DrivetrainDrive(drivetrain, driver);
 
-  public final BlankAuto blankAuto = new BlankAuto();
+  public final blankAuto blankAuto = new blankAuto();
 
   
 
@@ -66,10 +66,10 @@ public class RobotContainer {
     driver.getBottomButton().whenHeld(new IntakeLower(intake));
 
 
-    driver.getDPadUp().whenHeld(new ClimberUp(climber));
-    driver.getDPadDown().whenHeld(new ClimberDown(climber));
+    driver.getDPadUp().whenHeld(new climberUp(climber));
+    driver.getDPadDown().whenHeld(new climberDown(climber));
 
-    driver.getRightButton().whenHeld(new ShooterShoot(shooter, intake));
+    driver.getRightButton().whenHeld(new shooterShoot(shooter, intake));
     driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
   }
 
