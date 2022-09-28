@@ -6,9 +6,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class BlankAuto extends CommandBase {
+public class blankAuto extends CommandBase {
   
-  public BlankAuto() {
+  public blankAuto() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

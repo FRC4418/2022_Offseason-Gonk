@@ -31,7 +31,7 @@ public class Shooter extends SubsystemBase {
                                Settings.Shooter.PID.kD);
     
     shootMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
-    shootMotor.setInverted(false);
+    shootMotor.setInverted(true);
 		resetEncoders();
   }
 

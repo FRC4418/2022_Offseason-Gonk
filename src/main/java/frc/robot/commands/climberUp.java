@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Climber;
 
-public class ClimberUp extends CommandBase {
+public class climberUp extends CommandBase {
   private Climber climber;
   private double startTime;
  
-  public ClimberUp(Climber climber) {
+  public climberUp(Climber climber) {
     this.climber = climber;
     }
 

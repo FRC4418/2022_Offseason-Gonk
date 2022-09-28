@@ -36,6 +36,23 @@ final static WPI_TalonSRX upIntake = new WPI_TalonSRX(Ports.Intake.UPPER_INTAKE)
     moveIntake.setInverted(false);
 		resetEncoders();
 
+    upIntake.configFactoryDefault();
+
+    // Config closed-loop controls
+    upIntake.config_kF(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kF);
+    upIntake.config_kP(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kP);
+    
+    upIntake.config_kI(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kI);
+    upIntake.config_kD(Settings.Intake.PID.kSlot, 
+                               Settings.Intake.PID.kD);
+    
+    upIntake.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+    upIntake.setInverted(true);
+		resetEncoders();
+
   }
   
   @Override

@@ -83,13 +83,13 @@ public interface Settings {
     }
 
     public interface Intake{
-        SmartNumber SPIN_SPEED = new SmartNumber("Feeder and Shooter Settings/Roller Spin Speed", 0.0);
+        SmartNumber SPIN_SPEED = new SmartNumber("Feeder and Shooter Settings/Roller Spin Speed", 0.75);
 
         SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder and Shooter Settings/Intake Position Up", 0.0);
 
-        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 0.0);
+        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 12000.0);
 
-        SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Upper Intake Shoot Speed", 0.0);
+        SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Upper Intake Shoot Speed", 0.50);
 
         public interface PID {
             int kSlot = 0;
@@ -103,12 +103,12 @@ public interface Settings {
 
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
-        SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooter Speed", 1.0);
+        SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooting Speed", 230000.0);
 
         public interface PID {
             int kSlot = 0;
             double kF = 0;
-            double kP = 0;
+            double kP = 0.005;
             double kI = 0;
             double kD = 0;
             double kTimeoutMs = 50;

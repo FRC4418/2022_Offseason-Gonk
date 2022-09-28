@@ -16,6 +16,7 @@ public class shooterShoot extends CommandBase {
   public shooterShoot(Shooter shooter, Intake intake) {
     this.shooter = shooter;
     this.intake = intake;
+    addRequirements(shooter);
   }
 
   // Called when the command is initially scheduled.
@@ -25,6 +26,7 @@ public class shooterShoot extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    //Settings.Shooter.SHOOT_SPEED.get()
     Shooter.setVelocity(Settings.Shooter.SHOOT_SPEED.get());
     Intake.upIntake(Settings.Intake.UPPER_SHOOT_SPEED.get());
 

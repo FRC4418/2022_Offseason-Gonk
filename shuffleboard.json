@@ -135,7 +135,7 @@
     {
       "title": "Feeder and Shooter Settings",
       "autoPopulate": true,
-      "autoPopulatePrefix": "network_table:///SmartDashboard/Feeder and Shooter Settings/",
+      "autoPopulatePrefix": "network_table:///SmartDashboardFeeder and Shooter Settings/",
       "widgetPane": {
         "gridSize": 100.0,
         "showGrid": true,
@@ -150,10 +150,10 @@
             ],
             "content": {
               "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Shooter Speed",
-              "_title": "Shooter Speed",
+              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Shooting Speed",
+              "_title": "Shooting Speed",
               "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 6500.0,
+              "Slider Settings/Max": 65000.0,
               "Slider Settings/Block increment": 100.0,
               "Visuals/Display value": true
             }
@@ -397,9 +397,9 @@
     }
   ],
   "windowGeometry": {
-    "x": 378.0,
-    "y": 220.0,
-    "width": 1470.0,
-    "height": 582.0
+    "x": -8.0,
+    "y": 0.5714285969734192,
+    "width": 1470.2857666015625,
+    "height": 582.2857055664062
   }
 }
