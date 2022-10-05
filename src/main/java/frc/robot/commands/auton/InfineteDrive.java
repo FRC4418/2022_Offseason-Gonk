@@ -36,7 +36,9 @@ public class InfineteDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.tankDrive(0.5, 0.5); 
+    drivetrain.tankDrive(0.25, 0.25); 
+
+    System.out.println(Settings.Drivetrain.TIME_MOVING.get());
   }
 
   // Called once the command ends or is interrupted.

@@ -129,7 +129,7 @@
               "_title": "Invert Steering, Angle Setpoint Threshold"
             }
           },
-          "10,2": {
+          "8,3": {
             "size": [
               2,
               1
@@ -140,7 +140,7 @@
               "_title": "Displacement Auto"
             }
           },
-          "10,1": {
+          "8,1": {
             "size": [
               2,
               1
@@ -158,8 +158,8 @@
             ],
             "content": {
               "_type": "ComboBox Chooser",
-              "_source0": "network_table:///SmartDashboard/Driver Settings/Autonomous",
-              "_title": "autoChooser"
+              "_source0": "network_table:///SmartDashboard/Autonomous",
+              "_title": "/SmartDashboard/Autonomous"
             }
           }
         }
@@ -176,7 +176,7 @@
         "vgap": 16.0,
         "titleType": 0,
         "tiles": {
-          "0,0": {
+          "9,0": {
             "size": [
               2,
               1
@@ -186,12 +186,12 @@
               "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Shooting Speed",
               "_title": "Shooting Speed",
               "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 65000.0,
+              "Slider Settings/Max": 25.0,
               "Slider Settings/Block increment": 100.0,
               "Visuals/Display value": true
             }
           },
-          "2,0": {
+          "9,1": {
             "size": [
               2,
               1
@@ -206,7 +206,7 @@
               "Visuals/Display value": true
             }
           },
-          "4,0": {
+          "7,0": {
             "size": [
               2,
               1
@@ -221,7 +221,7 @@
               "Visuals/Display value": true
             }
           },
-          "4,1": {
+          "7,1": {
             "size": [
               2,
               1
@@ -236,7 +236,7 @@
               "Visuals/Display value": true
             }
           },
-          "0,1": {
+          "9,2": {
             "size": [
               2,
               1
@@ -249,6 +249,25 @@
               "Slider Settings/Max": 1.0,
               "Slider Settings/Block increment": 0.0625,
               "Visuals/Display value": true
+            }
+          },
+          "0,0": {
+            "size": [
+              6,
+              4
+            ],
+            "content": {
+              "_type": "Camera Stream",
+              "_source0": "camera_server://USB Camera 1",
+              "_title": "USB Camera 1",
+              "Crosshair/Show crosshair": true,
+              "Crosshair/Crosshair color": "#FFFFFFFF",
+              "Controls/Show controls": true,
+              "Controls/Rotation": "NONE",
+              "compression": 35.0,
+              "fps": 10,
+              "imageWidth": 320,
+              "imageHeight": 240
             }
           }
         }
@@ -430,9 +449,9 @@
     }
   ],
   "windowGeometry": {
-    "x": -8.0,
-    "y": 0.5714285969734192,
-    "width": 1470.2857666015625,
-    "height": 582.2857055664062
+    "x": -5.5,
+    "y": 1.5,
+    "width": 1290.0,
+    "height": 651.0
   }
 }

@@ -27,7 +27,7 @@ public class shooterShoot extends CommandBase {
   @Override
   public void execute() {
     //Settings.Shooter.SHOOT_SPEED.get()
-    Shooter.setVelocity(Settings.Shooter.SHOOT_SPEED.get());
+    Shooter.setVelocity(Settings.Shooter.SHOOT_SPEED.get()*10000.0);
     Intake.upIntake(Settings.Intake.UPPER_SHOOT_SPEED.get());
 
   }

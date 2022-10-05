@@ -107,7 +107,7 @@ public interface Settings {
 
     public interface Shooter {
         // Low Pass Filter and deadband for Feeder Controls
-        SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooting Speed", 230000.0);
+        SmartNumber SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Shooting Speed", 23.0);
 
         public interface PID {
             int kSlot = 0;

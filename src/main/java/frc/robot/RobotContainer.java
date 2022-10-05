@@ -34,6 +34,9 @@ import frc.robot.commands.auton.realAutoCode;
 import frc.robot.commands.auton.InfineteDrive;
 import frc.robot.commands.auton.driveDistanceMeters;
 import frc.robot.commands.blankAuto;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.TimedRobot;
+
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -50,7 +53,7 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
-  private final realAutoCode realAutoCode = new realAutoCode(drivetrain, 3.0);
+  private final realAutoCode realAutoCode = new realAutoCode(drivetrain, 2.2);
   private final driveDistanceMeters driveDistanceMeters = new driveDistanceMeters(drivetrain, 10.0);
   private final ConveryorIdle ConveryorIdle = new ConveryorIdle(shooter);
   public final AutoGamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
@@ -66,6 +69,7 @@ public class RobotContainer {
     configureDefaultCommands();
     configureButtonBindings();
     configureAutons();
+    
   }
 
 
@@ -100,11 +104,7 @@ public class RobotContainer {
 
 
   public Command getAutonomousCommand() {
-    return autoChooser.getSelected();
-    // return realAutoCode;
+    // return autoChooser.getSelected();
+    return realAutoCode;
   }
 }
-
-
-
-  
