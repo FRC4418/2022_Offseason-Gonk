@@ -52,10 +52,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
     drivetrain.setDefaultCommand(new DrivetrainDrive(drivetrain, driver));
-<<<<<<< Updated upstream
     
-=======
->>>>>>> Stashed changes
     climber.setDefaultCommand(new engageRatchet(climber));
     shooter.setDefaultCommand(new ConveryorIdle(shooter));
     intake.setDefaultCommand(new IntakeUp(intake));
