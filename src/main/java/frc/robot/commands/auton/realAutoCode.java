@@ -15,9 +15,9 @@ import frc.robot.commands.auton.InfineteDrive;
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
 public class realAutoCode extends ParallelRaceGroup {
   /** Creates a new realAutoCode. */
-  public realAutoCode() {
+  public realAutoCode(Drivetrain drivetrain) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new WaitCommand(5), new InfineteDrive());
+    addCommands(new WaitCommand(5), new InfineteDrive(drivetrain));
   }
     }

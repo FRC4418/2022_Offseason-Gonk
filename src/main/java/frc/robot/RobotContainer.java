@@ -29,7 +29,7 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
-  private final realAutoCode realAutoCode = new realAutoCode();
+  private final realAutoCode realAutoCode = new realAutoCode(drivetrain);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
