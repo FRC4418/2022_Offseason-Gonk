@@ -31,16 +31,16 @@ public class Climber extends SubsystemBase {
   }
 
   public void armsUp() {
-    winch.set(ControlMode.PercentOutput, -Settings.Climber.WINCH_POWER.get());
+    winch.set(ControlMode.PercentOutput, Settings.Climber.WINCH_POWER.get());
   }
 
   public void armsDown() {
-    winch.set(ControlMode.PercentOutput, Settings.Climber.WINCH_POWER.get());
+    winch.set(ControlMode.PercentOutput, -Settings.Climber.WINCH_POWER.get());
   }
   
   public void ending() {
     winch.set(ControlMode.PercentOutput, 0.0);
-    ratchet.setAngle(0.0);
+    ratchet.setAngle(30);
   }
   
 
