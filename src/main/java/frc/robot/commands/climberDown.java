@@ -12,6 +12,7 @@ public class climberDown extends CommandBase {
 
   public climberDown(Climber climber) {
     this.climber = climber;
+    addRequirements(climber);
   }
 
   // Called when the command is initially scheduled.
