@@ -22,6 +22,7 @@ import frc.robot.commands.shooterShoot;
 import frc.robot.commands.blankAuto;
 import frc.robot.commands.climberDown;
 import frc.robot.commands.climberUp;
+import frc.robot.commands.engageRatchet;
 import frc.robot.commands.IntakeLower;
 import frc.robot.constants.Ports;
 import frc.robot.subsystems.Climber;
@@ -52,6 +53,7 @@ public class RobotContainer {
     configureButtonBindings();
     drivetrain.setDefaultCommand(new DrivetrainDrive(drivetrain, driver));
     
+    climber.setDefaultCommand(new engageRatchet(climber));
     shooter.setDefaultCommand(new ConveryorIdle(shooter));
     intake.setDefaultCommand(new IntakeUp(intake));
   }
