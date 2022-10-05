@@ -4,37 +4,26 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Climber;
 
-public class climberUp extends CommandBase {
+public class engageRatchet extends CommandBase {
   private Climber climber;
-  private double startTime;
  
-  public climberUp(Climber climber) {
+  public engageRatchet(Climber climber) {
     this.climber = climber;
     addRequirements(climber);
     }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-    climber.ratchetRelease();
-    startTime = Timer.getFPGATimestamp();
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (startTime + 0.2 > Timer.getFPGATimestamp()) {
-      climber.armsDown();
-      climber.ratchetRelease();
+    climber.ratchetEngage(); 
     }
-    else {
-      climber.armsUp();   
-     }
-  }
 
   // Called once the command ends or is interrupted.
   @Override

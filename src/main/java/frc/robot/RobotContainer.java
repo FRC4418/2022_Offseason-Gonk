@@ -11,8 +11,18 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Intake;
-import frc.robot.commands.DrivetrainDrive;
 import frc.robot.subsystems.Climber;
+import frc.robot.commands.DrivetrainDrive;
+
+import frc.robot.commands.IntakeUp;
+import frc.robot.commands.ShooterEject;
+import frc.robot.commands.shooterShoot;
+import frc.robot.commands.blankAuto;
+import frc.robot.commands.climberDown;
+import frc.robot.commands.climberUp;
+import frc.robot.commands.engageRatchet;
+import frc.robot.commands.IntakeLower;
+import frc.robot.constants.Ports;
 import frc.robot.commands.auton.realAutoCode;
 import frc.robot.commands.auton.InfineteDrive;
 
@@ -35,6 +45,11 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
+    drivetrain.setDefaultCommand(new DrivetrainDrive(drivetrain, driver));
+    climber.setDefaultCommand(new engageRatchet(climber));
+    shooter.setDefaultCommand(new ConveryorIdle(shooter));
+    intake.setDefaultCommand(new IntakeUp(intake));
   }
 
   /**

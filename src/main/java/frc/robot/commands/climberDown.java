@@ -12,12 +12,13 @@ public class climberDown extends CommandBase {
 
   public climberDown(Climber climber) {
     this.climber = climber;
+    addRequirements(climber);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-
+    climber.ratchetEngage();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
