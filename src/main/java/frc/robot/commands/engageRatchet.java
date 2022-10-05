@@ -12,6 +12,7 @@ public class engageRatchet extends CommandBase {
  
   public engageRatchet(Climber climber) {
     this.climber = climber;
+    addRequirements(climber);
     }
 
   // Called when the command is initially scheduled.
