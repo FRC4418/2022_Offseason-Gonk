@@ -21,6 +21,7 @@ public class fanSpin extends CommandBase {
   public fanSpin(fan Fan) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.Fan = Fan;
+    addRequirements(Fan);
   }
 
   // Called when the command is initially scheduled.

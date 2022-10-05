@@ -38,7 +38,7 @@ public interface Ports {
     }
 
     public interface fan{
-        int fan = 6;
+        int FAN_PORT = 6;
     }
 
     

@@ -14,8 +14,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drivetrain;
 
 import frc.robot.subsystems.fan;
+// import frc.robot.commands.fanSpin;
 import frc.robot.commands.fanSpin;
-
 import frc.robot.commands.DrivetrainDrive;
 
 import frc.robot.commands.blankAuto;
