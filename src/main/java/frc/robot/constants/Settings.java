@@ -34,6 +34,8 @@ public interface Settings {
 
         SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.125);
         SmartNumber ANGLE_FILTER = new SmartNumber("Driver Settings/Turn Filtering", 0.005);
+        
+        SmartNumber FAN_SPEED = new SmartNumber("Driver Settings/Fan Speed", 0.125);
 
         // Width of the robot
         double TRACK_WIDTH = Units.inchesToMeters(26.9); // SEAN PROMISED !

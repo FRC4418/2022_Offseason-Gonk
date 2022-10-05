@@ -12,19 +12,16 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Shooter;
-import frc.robot.subsystems.Intake;
-import frc.robot.commands.ConveryorIdle;
+
+import frc.robot.subsystems.fan;
+import frc.robot.commands.fanSpin;
+
 import frc.robot.commands.DrivetrainDrive;
-import frc.robot.commands.IntakeUp;
-import frc.robot.commands.ShooterEject;
-import frc.robot.commands.shooterShoot;
+
 import frc.robot.commands.blankAuto;
-import frc.robot.commands.climberDown;
-import frc.robot.commands.climberUp;
-import frc.robot.commands.IntakeLower;
+
 import frc.robot.constants.Ports;
-import frc.robot.subsystems.Climber;
+
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -35,9 +32,11 @@ import frc.robot.subsystems.Climber;
 public class RobotContainer {
   // The robot's subsystems and commands
   private final Drivetrain drivetrain = new Drivetrain();
-  private final Shooter shooter = new Shooter();
-  private final Intake intake = new Intake();
-  private final Climber climber = new Climber();
+  // private final Shooter shooter = new Shooter();
+  // private final Intake intake = new Intake();
+  // private final Climber climber = new Climber();
+  private final fan Fan =  new fan();
+
   
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive drivetrainDrive = new DrivetrainDrive(drivetrain, driver);
@@ -51,9 +50,11 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
     drivetrain.setDefaultCommand(new DrivetrainDrive(drivetrain, driver));
+    Fan.setDefaultCommand(new fanSpin(Fan));
     
-    shooter.setDefaultCommand(new ConveryorIdle(shooter));
-    intake.setDefaultCommand(new IntakeUp(intake));
+    // shooter.setDefaultCommand(new ConveryorIdle(shooter));
+    // intake.setDefaultCommand(new IntakeUp(intake));
+  
   }
 
   /**
@@ -63,15 +64,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    driver.getTopButton().whenHeld(new IntakeUp(intake));
-    driver.getBottomButton().whenHeld(new IntakeLower(intake));
+    driver.getLeftButton().whenHeld(new fanSpin(Fan));
 
 
-    driver.getDPadUp().whenHeld(new climberUp(climber));
-    driver.getDPadDown().whenHeld(new climberDown(climber));
-
-    driver.getRightButton().whenHeld(new shooterShoot(shooter, intake));
-    driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
   }
 
   /**

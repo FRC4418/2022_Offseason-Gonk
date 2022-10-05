@@ -37,5 +37,9 @@ public interface Ports {
         int RATCHET = 4;
     }
 
+    public interface fan{
+        int fan = 100;
+    }
+
     
 }

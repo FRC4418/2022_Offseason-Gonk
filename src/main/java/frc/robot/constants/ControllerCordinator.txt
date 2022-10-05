@@ -1,15 +1,17 @@
-Y - Intake Up
-B - Shoot
-A - Intake Down
-X - Eject
+
+
+Y - Spin Fan
+B - 
+A - 
+X - 
 
 L Joystick Y 
 L Joystick X - Steering
 R Joystick Y 
 R Joystick X
 
-D Pad Up - Climber Up
-D Pad Down - Climber Down
+D Pad Up -
+D Pad Down - 
 D Pad Left
 D Pad Right
 

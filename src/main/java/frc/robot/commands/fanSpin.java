@@ -4,18 +4,23 @@
 
 package frc.robot.commands;
 
+import com.stuypulse.stuylib.input.Gamepad;
+import com.stuypulse.stuylib.math.SLMath;
+import com.stuypulse.stuylib.streams.IStream;
+import com.stuypulse.stuylib.streams.filters.LowPassFilter;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Shooter;
-import frc.robot.subsystems.Intake;
 import frc.robot.constants.Settings;
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.fan;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class ShooterEject extends CommandBase {
-  private Shooter shooter;
-  private Intake intake;
-
-  public ShooterEject(Shooter shooter, Intake intake) {
-    this.shooter = shooter;
-    this.intake = intake;
+public class fanSpin extends CommandBase {
+  private fan Fan;
+  /** Creates a new fanSpin. */
+  public fanSpin(fan Fan) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    this.Fan = Fan;
   }
 
   // Called when the command is initially scheduled.
@@ -25,17 +30,12 @@ public class ShooterEject extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Shooter.setVelocity(-Settings.Shooter.SHOOT_SPEED.get());
-    Intake.upIntake(-Settings.Intake.UPPER_SHOOT_SPEED.get());
-
+    Fan.setRPM();
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-    Shooter.setVelocity(0.0);
-    Intake.upIntake(0.0);
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override
