@@ -19,7 +19,7 @@ import frc.robot.commands.fanSpin;
 import frc.robot.commands.DrivetrainDrive;
 
 import frc.robot.commands.blankAuto;
-
+import frc.robot.commands.fanStop;
 import frc.robot.constants.Ports;
 
 
@@ -64,7 +64,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    driver.getLeftButton().whenHeld(new fanSpin(Fan));
+    driver.getLeftButton().whenHeld(new fanStop(Fan));
 
 
   }

@@ -20,7 +20,7 @@ import com.stuypulse.stuylib.math.SLMath;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class fan extends SubsystemBase {
-  final WPI_TalonSRX fanMotor = new WPI_TalonSRX(Ports.fan.FAN_PORT);
+  final WPI_TalonSRX fanMotor = new WPI_TalonSRX(Ports.fan.fan);
   /** Creates a new fan. */
   public fan() {
     fanMotor.configFactoryDefault();
