@@ -8,6 +8,9 @@ import com.stuypulse.stuylib.input.gamepads.AutoGamepad;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 
 import frc.robot.subsystems.Drivetrain;
@@ -82,10 +85,19 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
+  SendableChooser<Command> autoChooser = new SendableChooser<>();
+  // Add commands to the autonomous command chooser
+  public void configureAutons() {
+    autoChooser.setDefaultOption("RealAutoCode", new realAutoCode(drivetrain));
+    autoChooser.addOption("Do Nothing", new blankAuto());
+    SmartDashboard.putData("Autonomous", autoChooser);
+  } 
+    // Put the chooser on the dashboard
+
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     
-    return realAutoCode;
+    return autoChooser.getSelected();
   }
 }
 
