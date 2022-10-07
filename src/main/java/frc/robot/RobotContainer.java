@@ -28,9 +28,11 @@ import frc.robot.commands.climberUp;
 import frc.robot.commands.engageRatchet;
 import frc.robot.commands.IntakeLower;
 import frc.robot.constants.Ports;
+import frc.robot.constants.Settings;
 import frc.robot.constants.Ports.Gamepad;
 import frc.robot.commands.auton.realAutoCode;
 import frc.robot.commands.auton.InfineteDrive;
+import frc.robot.commands.auton.driveDistanceMeters;
 import frc.robot.commands.blankAuto;
 
 /**
@@ -45,7 +47,8 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
-  private final realAutoCode realAutoCode = new realAutoCode(drivetrain);
+  private final realAutoCode realAutoCode = new realAutoCode(drivetrain, 0.0);
+  private final driveDistanceMeters driveDistanceMeters = new driveDistanceMeters(drivetrain, 0.0);
   private final ConveryorIdle ConveryorIdle = new ConveryorIdle(shooter);
   public final AutoGamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive DrivetrainDrive = new DrivetrainDrive(drivetrain, driver);
@@ -88,8 +91,9 @@ public class RobotContainer {
   SendableChooser<Command> autoChooser = new SendableChooser<>();
   // Add commands to the autonomous command chooser
   public void configureAutons() {
-    autoChooser.setDefaultOption("RealAutoCode", new realAutoCode(drivetrain));
-    autoChooser.addOption("Do Nothing", new blankAuto());
+    autoChooser.addOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING));
+    autoChooser.setDefaultOption("Do Nothing", new blankAuto());
+    autoChooser.addOption("Drive for N meters", new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
     SmartDashboard.putData("Autonomous", autoChooser);
   } 
     // Put the chooser on the dashboard

@@ -3,6 +3,7 @@ package frc.robot.constants;
 
 // import com.stuypulse.stuylib.network.SmartBoolean;
 import com.stuypulse.stuylib.network.SmartNumber;
+import com.stuypulse.stuylib.network.SmartString;
 
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.util.Units;
@@ -34,6 +35,9 @@ public interface Settings {
 
         SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.125);
         SmartNumber ANGLE_FILTER = new SmartNumber("Driver Settings/Turn Filtering", 0.005);
+
+        SmartNumber DISPLACEMENT_METERS = new SmartNumber("Displacement Auto", 0.0);
+        SmartNumber TIME_MOVING = new SmartNumber("Time Driving Auto", 0.0);
 
         // Width of the robot
         double TRACK_WIDTH = Units.inchesToMeters(26.9); // SEAN PROMISED !
