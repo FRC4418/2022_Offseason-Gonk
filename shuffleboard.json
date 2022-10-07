@@ -158,6 +158,7 @@
             ],
             "content": {
               "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/Autonomous",
               "_title": "autoChooser"
             }
           }
