@@ -17,6 +17,7 @@ import frc.robot.subsystems.fan;
 // import frc.robot.commands.fanSpin;
 import frc.robot.commands.fanSpin;
 import frc.robot.commands.DrivetrainDrive;
+import frc.robot.commands.auton.realAutoCode;
 
 import frc.robot.commands.blankAuto;
 import frc.robot.commands.fanStop;
@@ -37,9 +38,10 @@ public class RobotContainer {
   // private final Climber climber = new Climber();
   private final fan Fan =  new fan();
 
-  
+  private final realAutoCode realAutoCode = new realAutoCode(drivetrain);
   public final Gamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive drivetrainDrive = new DrivetrainDrive(drivetrain, driver);
+
 
   public final blankAuto blankAuto = new blankAuto();
 
@@ -76,7 +78,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return blankAuto;
+    return realAutoCode;
   }
 }
 

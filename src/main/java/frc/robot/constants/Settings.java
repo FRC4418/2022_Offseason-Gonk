@@ -16,6 +16,14 @@ import edu.wpi.first.math.util.Units;
  */
 public interface Settings {
 
+    public interface auto{
+        SmartNumber AUTO_DURATION = new SmartNumber("Driver Settings/Auto Duration", 0.0);
+    }
+    
+    public interface fan{
+        SmartNumber FAN_SPEED = new SmartNumber("Driver Settings/Fan Speed", 0.125);
+    }
+
     public interface Drivetrain {
         // If speed is below this, use quick turn
         SmartNumber BASE_TURNING_SPEED = new SmartNumber("Driver Settings/Base Turn Speed", 0.45);
@@ -35,7 +43,7 @@ public interface Settings {
         SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.125);
         SmartNumber ANGLE_FILTER = new SmartNumber("Driver Settings/Turn Filtering", 0.005);
         
-        SmartNumber FAN_SPEED = new SmartNumber("Driver Settings/Fan Speed", 0.125);
+        
 
         // Width of the robot
         double TRACK_WIDTH = Units.inchesToMeters(26.9); // SEAN PROMISED !

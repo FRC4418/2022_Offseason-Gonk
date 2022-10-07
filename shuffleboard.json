@@ -103,6 +103,36 @@
               "Visuals/Display value": true
             }
           },
+          "0,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Slider",
+              "_source0": "network_table:///SmartDashboard/Driver Settings/Fan Speed",
+              "_title": "Fan Speed",
+              "Slider Settings/Min": 0.0,
+              "Slider Settings/Max": 1.0,
+              "Slider Settings/Block increment": 0.06,
+              "Visuals/Display value": true
+            }
+          },
+          "0,1": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Slider",
+              "_source0": "network_table:///SmartDashboard/Driver Settings/Auto Duration",
+              "_title": "Auto Duration",
+              "Slider Settings/Min": 0.0,
+              "Slider Settings/Max": 15.0,
+              "Slider Settings/Block increment": 1,
+              "Visuals/Display value": true
+            }
+          },
           "0,0": {
             "size": [
               2,
@@ -117,6 +147,8 @@
               "Slider Settings/Block increment": 0.0625,
               "Visuals/Display value": true
             }
+            
+            
           },
           "3,1": {
             "size": [
@@ -127,154 +159,6 @@
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Driver Settings/ Invert Steering, Angle Setpoint Threshold",
               "_title": "Invert Steering, Angle Setpoint Threshold"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Feeder and Shooter Settings",
-      "autoPopulate": true,
-      "autoPopulatePrefix": "network_table:///SmartDashboardFeeder and Shooter Settings/",
-      "widgetPane": {
-        "gridSize": 100.0,
-        "showGrid": true,
-        "hgap": 16.0,
-        "vgap": 16.0,
-        "titleType": 0,
-        "tiles": {
-          "0,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Shooting Speed",
-              "_title": "Shooting Speed",
-              "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 65000.0,
-              "Slider Settings/Block increment": 100.0,
-              "Visuals/Display value": true
-            }
-          },
-          "2,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Roller Spin Speed",
-              "_title": "Roller Spin Speed",
-              "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 1.0,
-              "Slider Settings/Block increment": 0.0625,
-              "Visuals/Display value": true
-            }
-          },
-          "4,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Intake Position Up",
-              "_title": "Intake Position Up",
-              "Slider Settings/Min": -2000.0,
-              "Slider Settings/Max": 2000.0,
-              "Slider Settings/Block increment": 100.0,
-              "Visuals/Display value": true
-            }
-          },
-          "4,1": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Intake Position Down",
-              "_title": "Intake Position Down",
-              "Slider Settings/Min": 5000.0,
-              "Slider Settings/Max": 20000.0,
-              "Slider Settings/Block increment": 100.0,
-              "Visuals/Display value": true
-            }
-          },
-          "0,1": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Feeder and Shooter Settings/Upper Intake Shoot Speed",
-              "_title": "Upper Intake Shoot Speed",
-              "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 1.0,
-              "Slider Settings/Block increment": 0.0625,
-              "Visuals/Display value": true
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Climber Settings",
-      "autoPopulate": true,
-      "autoPopulatePrefix": "network_table:///SmartDashboard/Climber Settings/",
-      "widgetPane": {
-        "gridSize": 100.0,
-        "showGrid": true,
-        "hgap": 16.0,
-        "vgap": 16.0,
-        "titleType": 0,
-        "tiles": {
-          "0,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Climber Settings/Climber Speed",
-              "_title": "Climber Speed",
-              "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 1.0,
-              "Slider Settings/Block increment": 0.0625,
-              "Visuals/Display value": true
-            }
-          },
-          "3,0": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Climber Settings/Ratchet Release Angle",
-              "_title": "Winch Servo Release Angle",
-              "Slider Settings/Min": -90.0,
-              "Slider Settings/Max": 90.0,
-              "Slider Settings/Block increment": 2.0,
-              "Visuals/Display value": true
-            }
-          },
-          "3,1": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///SmartDashboard/Climber Settings/Ratchet Engage Angle",
-              "_title": "Winch Servo Engage Angle",
-              "Slider Settings/Min": -90.0,
-              "Slider Settings/Max": 90.0,
-              "Slider Settings/Block increment": 2.0,
-              "Visuals/Display value": true
             }
           }
         }

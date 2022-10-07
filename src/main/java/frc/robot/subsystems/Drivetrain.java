@@ -12,6 +12,7 @@ import frc.robot.constants.Settings;
 import frc.robot.constants.Settings.Drivetrain.Encoders;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 // import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.stuypulse.stuylib.math.SLMath;
@@ -57,6 +58,10 @@ public class Drivetrain extends SubsystemBase {
 
     leftGroup.setInverted(true);
 		rightGroup.setInverted(false);
+    leftFrontMotor.setNeutralMode(NeutralMode.Brake);
+		leftBackMotor.setNeutralMode(NeutralMode.Brake);
+		rightFrontMotor.setNeutralMode(NeutralMode.Brake);
+		rightBackMotor.setNeutralMode(NeutralMode.Brake);
   }
 
 

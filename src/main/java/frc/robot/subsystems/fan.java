@@ -20,10 +20,11 @@ import com.stuypulse.stuylib.math.SLMath;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class fan extends SubsystemBase {
-  final WPI_TalonSRX fanMotor = new WPI_TalonSRX(Ports.fan.fan);
+  final WPI_TalonSRX fanMotor = new WPI_TalonSRX(Ports.fan.FAN_PORT);
   /** Creates a new fan. */
   public fan() {
     fanMotor.configFactoryDefault();
+    fanMotor.setInverted(true);
   }
 
   public void stop(){
@@ -31,8 +32,7 @@ public class fan extends SubsystemBase {
   }
 
   public void setRPM(){
-    double rpm = 10;
-    fanMotor.set(ControlMode.PercentOutput, rpm);
+    fanMotor.set(ControlMode.PercentOutput, Settings.fan.FAN_SPEED.get());
   }
 
   @Override
