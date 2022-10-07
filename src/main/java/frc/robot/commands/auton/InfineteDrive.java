@@ -18,6 +18,7 @@ public class InfineteDrive extends CommandBase {
   private Drivetrain drivetrain;
   public InfineteDrive(Drivetrain drivetrain) {
     this.drivetrain= drivetrain;
+    addRequirements(drivetrain);
   }
       
     // Use addRequirements() here to declare subsystem dependencies.

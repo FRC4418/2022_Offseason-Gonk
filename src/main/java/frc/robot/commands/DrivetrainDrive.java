@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import com.stuypulse.stuylib.input.Gamepad;
+import com.stuypulse.stuylib.input.gamepads.AutoGamepad;
 import com.stuypulse.stuylib.math.SLMath;
 import com.stuypulse.stuylib.streams.IStream;
 import com.stuypulse.stuylib.streams.filters.LowPassFilter;
@@ -19,20 +20,20 @@ public class DrivetrainDrive extends CommandBase {
 
   private final IStream speedSetpoint, angleSetpoint;
 
-  public DrivetrainDrive(Drivetrain drivetrain, Gamepad driver) {
+  public DrivetrainDrive(Drivetrain drivetrain, AutoGamepad driver2) {
     this.drivetrain = drivetrain;
-    this.driver = driver;
+    this.driver = driver2;
 
     // Gives 1 to -1, and 0 when both triggers are held down
     // Mapped to symetric max values from shuffleboard
-    this.speedSetpoint = IStream.create(() -> driver.getRightTrigger() - driver.getLeftTrigger())
+    this.speedSetpoint = IStream.create(() -> driver2.getRightTrigger() - driver2.getLeftTrigger())
         .filtered(
             x -> SLMath.map(x, -1, 1, -Settings.Drivetrain.MAX_SPEED.get(), Settings.Drivetrain.MAX_SPEED.get()),
             x -> SLMath.deadband(x, Settings.Drivetrain.SPEED_DEADBAND.get()),
             x -> SLMath.spow(x, Settings.Drivetrain.SPEED_POWER.get()),
             new LowPassFilter(Settings.Drivetrain.SPEED_FILTER));
 
-    this.angleSetpoint = IStream.create(() -> -driver.getLeftX())
+    this.angleSetpoint = IStream.create(() -> -driver2.getLeftX())
         .filtered(
             x -> SLMath.map(x, -1, 1, -Settings.Drivetrain.MAX_SPEED_ANGLE.get(),
                 Settings.Drivetrain.MAX_SPEED_ANGLE.get()),
