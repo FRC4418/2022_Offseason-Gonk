@@ -50,12 +50,14 @@ public class RobotContainer {
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
   private final Climber climber = new Climber();
-  private final realAutoCode realAutoCode = new realAutoCode(drivetrain, 0.0);
-  private final driveDistanceMeters driveDistanceMeters = new driveDistanceMeters(drivetrain, 0.0);
+  private final realAutoCode realAutoCode = new realAutoCode(drivetrain, 3.0);
+  private final driveDistanceMeters driveDistanceMeters = new driveDistanceMeters(drivetrain, 10.0);
   private final ConveryorIdle ConveryorIdle = new ConveryorIdle(shooter);
   public final AutoGamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive DrivetrainDrive = new DrivetrainDrive(drivetrain, driver);
   public final blankAuto blankAuto = new blankAuto();
+
+  private static SendableChooser<Command> autoChooser = new SendableChooser<>();
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -89,27 +91,22 @@ public class RobotContainer {
     driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
   }
 
-  /**
-   * Use this to pass the autonomous command to the main {@link Robot} class.
-   *
-   * @return the command to run in autonomous
-   */
-  SendableChooser<Command> autoChooser = new SendableChooser<>();
-
   // Add commands to the autonomous command chooser
   public void configureAutons() {
-    autoChooser.addOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING));
-    autoChooser.setDefaultOption("Do Nothing", new blankAuto());
-    autoChooser.addOption("Drive for N meters",
-        new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
-    SmartDashboard.putData("Autonomous", autoChooser);
+    autoChooser.setDefaultOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING));
+    // autoChooser.setDefaultOption("Do Nothing", new blankAuto());
+    // autoChooser.setDefaultOption("Drive for N meters",
+        // new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
+    //SmartDashboard.putData("Autonomous", autoChooser);
+    Shuffleboard.getTab("Driver Settings").add("Auto",autoChooser);
   }
   // Put the chooser on the dashboard
 
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     
-    return autoChooser.getSelected();
+    //return autoChooser.getSelected();
+    return realAutoCode;
   }
 }
 

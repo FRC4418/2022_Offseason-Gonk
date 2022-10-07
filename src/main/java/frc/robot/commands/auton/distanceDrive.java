@@ -23,7 +23,9 @@ public class distanceDrive extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    drivetrain.resetEncoders();
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
