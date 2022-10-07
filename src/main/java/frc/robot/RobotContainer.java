@@ -36,9 +36,12 @@ import frc.robot.commands.auton.driveDistanceMeters;
 import frc.robot.commands.blankAuto;
 
 /**
- * This class is where the bulk of the robot should be declared. Since Command-based is a
- * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
- * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
+ * This class is where the bulk of the robot should be declared. Since
+ * Command-based is a
+ * "declarative" paradigm, very little robot logic should actually be handled in
+ * the {@link Robot}
+ * periodic methods (other than the scheduler calls). Instead, the structure of
+ * the robot (including
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
@@ -54,7 +57,9 @@ public class RobotContainer {
   private final DrivetrainDrive DrivetrainDrive = new DrivetrainDrive(drivetrain, driver);
   public final blankAuto blankAuto = new blankAuto();
 
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
+  /**
+   * The container for the robot. Contains subsystems, OI devices, and commands.
+   */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
@@ -66,15 +71,16 @@ public class RobotContainer {
   }
 
   /**
-   * Use this method to define your button->command mappings. Buttons can be created by
+   * Use this method to define your button->command mappings. Buttons can be
+   * created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
+   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing
+   * it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
     driver.getTopButton().whenHeld(new IntakeUp(intake));
     driver.getBottomButton().whenHeld(new IntakeLower(intake));
-
 
     driver.getDPadUp().whenHeld(new climberUp(climber));
     driver.getDPadDown().whenHeld(new climberDown(climber));
@@ -89,14 +95,16 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   SendableChooser<Command> autoChooser = new SendableChooser<>();
+
   // Add commands to the autonomous command chooser
   public void configureAutons() {
     autoChooser.addOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING));
     autoChooser.setDefaultOption("Do Nothing", new blankAuto());
-    autoChooser.addOption("Drive for N meters", new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
+    autoChooser.addOption("Drive for N meters",
+        new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
     SmartDashboard.putData("Autonomous", autoChooser);
-  } 
-    // Put the chooser on the dashboard
+  }
+  // Put the chooser on the dashboard
 
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
@@ -105,3 +113,6 @@ public class RobotContainer {
   }
 }
 
+
+
+  

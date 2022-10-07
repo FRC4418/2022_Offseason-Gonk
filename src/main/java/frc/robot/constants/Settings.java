@@ -36,11 +36,11 @@ public interface Settings {
         SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.125);
         SmartNumber ANGLE_FILTER = new SmartNumber("Driver Settings/Turn Filtering", 0.005);
 
-        SmartNumber DISPLACEMENT_METERS = new SmartNumber("Displacement Auto", 0.0);
-        SmartNumber TIME_MOVING = new SmartNumber("Time Driving Auto", 0.0);
+        SmartNumber DISPLACEMENT_METERS = new SmartNumber("Driver Settings/Displacement Auto", 0.0);
+        SmartNumber TIME_MOVING = new SmartNumber("Driver Settings/Time Driving Auto", 0.0);
 
         // Width of the robot
-        double TRACK_WIDTH = Units.inchesToMeters(26.9); // SEAN PROMISED !
+        double TRACK_WIDTH = Units.inchesToMeters(26.9); 
 
         public interface Motion {
 

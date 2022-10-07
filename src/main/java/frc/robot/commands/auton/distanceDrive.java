@@ -18,7 +18,7 @@ public class distanceDrive extends CommandBase {
   public distanceDrive(Drivetrain drivetrain, Number distanceDriveMeters) {
     this.drivetrain = drivetrain;
     AvgDistance = 0.0;
-    addRequirements(drivetrain);
+    // addRequirements(drivetrain);
   }
 
   // Called when the command is initially scheduled.
