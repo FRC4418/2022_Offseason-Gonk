@@ -78,22 +78,22 @@ public class RobotContainer {
 
 
   private void configureButtonBindings() {
-    driver.getTopButton().whenHeld(new IntakeUp(intake));
-    driver.getBottomButton().whenHeld(new IntakeLower(intake));
+    
 
     driver.getDPadUp().whenHeld(new climberUp(climber));
     driver.getDPadDown().whenHeld(new climberDown(climber));
-
-    driver.getRightButton().whenHeld(new shooterShoot(shooter, intake));
-    driver.getLeftButton().whenHeld(new ShooterEject(shooter, intake));
+    
+    driver.getTopButton().whenHeld(new IntakeLower(intake));
+    driver.getLeftButton().whenHeld(new shooterShoot(shooter, intake));
+    driver.getRightButton().whenHeld(new ShooterEject(shooter, intake));
   }
 
 
   // Add commands to the autonomous command chooser
   public void configureAutons() {
-    autoChooser.addOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING));
+    autoChooser.addOption("RealAutoCode", new realAutoCode(drivetrain, Settings.Drivetrain.TIME_MOVING.get()));
     autoChooser.setDefaultOption("Do Nothing", new blankAuto());
-    autoChooser.addOption("Drive for N meters", new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS));
+    autoChooser.addOption("Drive for N meters", new driveDistanceMeters(drivetrain, Settings.Drivetrain.DISPLACEMENT_METERS.get()));
 
     SmartDashboard.putData("Autonomous", autoChooser);
   }
