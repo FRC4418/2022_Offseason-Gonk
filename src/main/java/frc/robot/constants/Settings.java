@@ -27,13 +27,13 @@ public interface Settings {
         SmartNumber SPEED_DEADBAND = new SmartNumber("Driver Settings/Speed Deadband", 0.00);
         SmartNumber ANGLE_DEADBAND = new SmartNumber("Driver Settings/Turn Deadband", 0.00);
         
-        SmartNumber MAX_SPEED_ANGLE = new SmartNumber("Driver Settings/Max Speed Angle", 0.5);
-        SmartNumber MAX_SPEED = new SmartNumber("Driver Settings/Max Speed", 0.5);
+        SmartNumber MAX_SPEED_ANGLE = new SmartNumber("Driver Settings/Max Speed Angle", 0.85);
+        SmartNumber MAX_SPEED = new SmartNumber("Driver Settings/Max Speed", 1.0);
 
         SmartNumber SPEED_POWER = new SmartNumber("Driver Settings/Speed Power", 2.0);
         SmartNumber ANGLE_POWER = new SmartNumber("Driver Settings/Turn Power", 1.0);
 
-        SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.125);
+        SmartNumber SPEED_FILTER = new SmartNumber("Driver Settings/Speed Filtering", 0.25);
         SmartNumber ANGLE_FILTER = new SmartNumber("Driver Settings/Turn Filtering", 0.005);
 
         SmartNumber DISPLACEMENT_METERS = new SmartNumber("Driver Settings/Displacement Auto", 0.0);
@@ -89,17 +89,17 @@ public interface Settings {
     public interface Intake{
         SmartNumber SPIN_SPEED = new SmartNumber("Feeder and Shooter Settings/Roller Spin Speed", 0.75);
 
-        SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder and Shooter Settings/Intake Position Up", 0.0);
+        SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder and Shooter Settings/Intake Position Up", 2000.0);
 
-        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 13000.0);
+        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 16500.0);
 
         SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Upper Intake Shoot Speed", 0.50);
 
         public interface PID {
             int kSlot = 0;
             double kF = 0;
-            double kP = 0.03;
-            double kI = 0;
+            double kP = 0.025;
+            double kI = 0.0001;
             double kD = 0.001;
             double kTimeoutMs = 50;
         }
@@ -119,7 +119,7 @@ public interface Settings {
         }
     }
     public interface Climber {
-        SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.0);
+        SmartNumber WINCH_POWER = new SmartNumber("Climber Settings/Climber Speed", 0.75);
 
         SmartNumber RATCHET_ENGAGE_ANGLE = new SmartNumber("Climber Settings/Ratchet Engage Angle", 40);
 
