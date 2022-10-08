@@ -91,7 +91,7 @@ public interface Settings {
 
         SmartNumber INTAKE_POSITION_UP = new SmartNumber("Feeder and Shooter Settings/Intake Position Up", 0.0);
 
-        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 12000.0);
+        SmartNumber INTAKE_POSITION_DOWN = new SmartNumber("Feeder and Shooter Settings/Intake Position Down", 13000.0);
 
         SmartNumber UPPER_SHOOT_SPEED = new SmartNumber("Feeder and Shooter Settings/Upper Intake Shoot Speed", 0.50);
 
