@@ -25,7 +25,7 @@ public interface Settings {
 
         // Low Pass Filter and deadband for Driver Controls
         SmartNumber SPEED_DEADBAND = new SmartNumber("Driver Settings/Speed Deadband", 0.00);
-        SmartNumber ANGLE_DEADBAND = new SmartNumber("Driver Settings/Turn Deadband", 0.00);
+        SmartNumber ANGLE_DEADBAND = new SmartNumber("Driver Settings/Turn Deadband", 0.10);
         
         SmartNumber MAX_SPEED_ANGLE = new SmartNumber("Driver Settings/Max Speed Angle", 0.85);
         SmartNumber MAX_SPEED = new SmartNumber("Driver Settings/Max Speed", 1.0);
@@ -98,8 +98,8 @@ public interface Settings {
         public interface PID {
             int kSlot = 0;
             double kF = 0;
-            double kP = 0.025;
-            double kI = 0.0001;
+            double kP = 0.02;
+            double kI = 0.00001;
             double kD = 0.001;
             double kTimeoutMs = 50;
         }
