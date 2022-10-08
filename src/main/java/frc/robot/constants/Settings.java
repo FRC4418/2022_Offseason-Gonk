@@ -21,7 +21,7 @@ public interface Settings {
     }
     
     public interface fan{
-        SmartNumber FAN_SPEED = new SmartNumber("Driver Settings/Fan Speed", 0.125);
+        SmartNumber FAN_SPEED = new SmartNumber("Driver Settings/Fan Speed", 0.75);
     }
 
     public interface Drivetrain {
