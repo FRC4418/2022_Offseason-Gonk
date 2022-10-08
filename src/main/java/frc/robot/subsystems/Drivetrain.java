@@ -19,13 +19,13 @@ import com.stuypulse.stuylib.math.SLMath;
 
 public class Drivetrain extends SubsystemBase {
 
-  final WPI_TalonFX leftFrontMotor = new WPI_TalonFX(Ports.Drivetrain.LEFT_FRONT);
-  final WPI_TalonFX leftBackMotor = new WPI_TalonFX(Ports.Drivetrain.LEFT_BACK);
-  MotorControllerGroup leftGroup = new MotorControllerGroup(leftFrontMotor, leftBackMotor);
+  public final WPI_TalonFX leftFrontMotor = new WPI_TalonFX(Ports.Drivetrain.LEFT_FRONT);
+  public final WPI_TalonFX leftBackMotor = new WPI_TalonFX(Ports.Drivetrain.LEFT_BACK);
+  public MotorControllerGroup leftGroup = new MotorControllerGroup(leftFrontMotor, leftBackMotor);
 
-  final WPI_TalonFX rightFrontMotor = new WPI_TalonFX(Ports.Drivetrain.RIGHT_FRONT);
-  final WPI_TalonFX rightBackMotor = new WPI_TalonFX(Ports.Drivetrain.RIGHT_BACK);
-  MotorControllerGroup rightGroup = new MotorControllerGroup(rightFrontMotor, rightBackMotor);
+  public final WPI_TalonFX rightFrontMotor = new WPI_TalonFX(Ports.Drivetrain.RIGHT_FRONT);
+  public final WPI_TalonFX rightBackMotor = new WPI_TalonFX(Ports.Drivetrain.RIGHT_BACK);
+  public MotorControllerGroup rightGroup = new MotorControllerGroup(rightFrontMotor, rightBackMotor);
 
   DifferentialDrive differentialDrive = new DifferentialDrive(leftGroup, rightGroup);
 

@@ -18,6 +18,8 @@ public class realAutoCode extends ParallelRaceGroup {
   public realAutoCode(Drivetrain drivetrain) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new WaitCommand(Settings.auto.AUTO_DURATION.get()), new InfineteDrive(drivetrain));
+    //Settings.auto.AUTO_DURATION.get())
+    //new WaitCommand(3.0),
+    addCommands( new InfineteDrive(drivetrain));
   }
     }

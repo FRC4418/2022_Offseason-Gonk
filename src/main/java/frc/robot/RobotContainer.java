@@ -66,7 +66,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    driver.getLeftButton().whenHeld(new fanStop(Fan));
+    driver.getTopButton().whenHeld(new fanStop(Fan));
 
 
   }
@@ -78,7 +78,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return realAutoCode;
+    return blankAuto;
   }
 }
 

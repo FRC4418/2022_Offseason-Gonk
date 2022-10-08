@@ -17,7 +17,7 @@ import edu.wpi.first.math.util.Units;
 public interface Settings {
 
     public interface auto{
-        SmartNumber AUTO_DURATION = new SmartNumber("Driver Settings/Auto Duration", 0.0);
+        SmartNumber AUTO_DURATION = new SmartNumber("Driver Settings/Auto Duration", 1.5);
     }
     
     public interface fan{
@@ -31,8 +31,8 @@ public interface Settings {
         "Driver Settings/ Invert Steering, Angle Setpoint Threshold", 0.15);
 
         // Low Pass Filter and deadband for Driver Controls
-        SmartNumber SPEED_DEADBAND = new SmartNumber("Driver Settings/Speed Deadband", 0.00);
-        SmartNumber ANGLE_DEADBAND = new SmartNumber("Driver Settings/Turn Deadband", 0.00);
+        SmartNumber SPEED_DEADBAND = new SmartNumber("Driver Settings/Speed Deadband", 0.1);
+        SmartNumber ANGLE_DEADBAND = new SmartNumber("Driver Settings/Turn Deadband", 0.1);
         
         SmartNumber MAX_SPEED_ANGLE = new SmartNumber("Driver Settings/Max Speed Angle", 0.5);
         SmartNumber MAX_SPEED = new SmartNumber("Driver Settings/Max Speed", 0.5);

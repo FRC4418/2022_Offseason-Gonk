@@ -4,10 +4,8 @@
 
 package frc.robot.commands.auton;
 
-import com.stuypulse.stuylib.input.Gamepad;
-import com.stuypulse.stuylib.math.SLMath;
-import com.stuypulse.stuylib.streams.IStream;
-import com.stuypulse.stuylib.streams.filters.LowPassFilter;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.constants.Settings;
@@ -17,7 +15,37 @@ public class InfineteDrive extends CommandBase {
   /** Creates a new InfineteDrive. */
   private Drivetrain drivetrain;
   public InfineteDrive(Drivetrain drivetrain) {
-    this.drivetrain= drivetrain;
+    this.drivetrain = drivetrain;
+    drivetrain.leftFrontMotor.configFactoryDefault();
+		drivetrain.leftBackMotor.configFactoryDefault();
+		drivetrain.rightFrontMotor.configFactoryDefault();
+		drivetrain.rightBackMotor.configFactoryDefault();
+
+		drivetrain.leftBackMotor.follow(drivetrain.leftFrontMotor);
+		drivetrain.rightBackMotor.follow(drivetrain.rightFrontMotor);
+
+    // Config closed-loop controls
+    /*
+    leftFrontMotor.config_kF(Settings.Drivetrain.Motion.PID.kSlot, 
+                               Settings.Drivetrain.Motion.PID.kF);
+		leftFrontMotor.config_kP(Settings.Drivetrain.Motion.PID.kSlot, 
+                               Settings.Drivetrain.Motion.PID.kP);
+    
+		leftFrontMotor.config_kI(Settings.Drivetrain.Motion.PID.kSlot, 
+                               Settings.Drivetrain.Motion.PID.kI);
+    leftFrontMotor.config_kD(Settings.Drivetrain.Motion.PID.kSlot, 
+                               Settings.Drivetrain.Motion.PID.kD);
+		*/
+    
+    // Config integrated sensors (built-in encoders)
+		drivetrain.resetEncoders();
+
+    drivetrain.leftGroup.setInverted(true);
+		drivetrain.rightGroup.setInverted(false);
+    drivetrain.leftFrontMotor.setNeutralMode(NeutralMode.Brake);
+		drivetrain.leftBackMotor.setNeutralMode(NeutralMode.Brake);
+		drivetrain.rightFrontMotor.setNeutralMode(NeutralMode.Brake);
+		drivetrain.rightBackMotor.setNeutralMode(NeutralMode.Brake);
   }
       
     // Use addRequirements() here to declare subsystem dependencies.
@@ -35,13 +63,18 @@ public class InfineteDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.tankDrive(0.5, 0.5); 
+    drivetrain.leftFrontMotor.set(ControlMode.PercentOutput, 1.0);
+		drivetrain.rightFrontMotor.set(ControlMode.PercentOutput, 1.0); 
+    drivetrain.leftBackMotor.set(ControlMode.PercentOutput, 1.0);
+		drivetrain.rightBackMotor.set(ControlMode.PercentOutput, 1.0); 
+    
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
     drivetrain.tankDrive(0.0, 0.0);
+    System.out.println("stopping");
   }
 
   // Returns true when the command should end.
