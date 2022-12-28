@@ -38,6 +38,17 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 
 
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.SPI;
+
+import com.kauailabs.navx.frc.AHRS;
+
+
+
+
+//import com.kauailabs.navx.frc;
+
 /**
  * This class is where the bulk of the robot should be declared. Since
  * Command-based is a
@@ -48,7 +59,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  // The robot's subsystems and commands are defined here... 
   private final Drivetrain drivetrain = new Drivetrain();
   private final Shooter shooter = new Shooter();
   private final Intake intake = new Intake();
@@ -59,6 +70,8 @@ public class RobotContainer {
   public final AutoGamepad driver = new AutoGamepad(Ports.Gamepad.DRIVER);
   private final DrivetrainDrive DrivetrainDrive = new DrivetrainDrive(drivetrain, driver);
   public final blankAuto blankAuto = new blankAuto();
+
+  public final AHRS ahrs = new AHRS();
 
   private static SendableChooser<Command> autoChooser = new SendableChooser<>();
 
