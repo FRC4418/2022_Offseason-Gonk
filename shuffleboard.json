@@ -129,7 +129,7 @@
               "_title": "Auto Duration",
               "Slider Settings/Min": 0.0,
               "Slider Settings/Max": 15.0,
-              "Slider Settings/Block increment": 1,
+              "Slider Settings/Block increment": 1.0,
               "Visuals/Display value": true
             }
           },
@@ -147,8 +147,6 @@
               "Slider Settings/Block increment": 0.0625,
               "Visuals/Display value": true
             }
-            
-            
           },
           "3,1": {
             "size": [
@@ -159,6 +157,28 @@
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Driver Settings/ Invert Steering, Angle Setpoint Threshold",
               "_title": "Invert Steering, Angle Setpoint Threshold"
+            }
+          },
+          "2,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Driver Settings/Displacement Auto",
+              "_title": "Displacement Auto"
+            }
+          },
+          "9,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Driver Settings/Time Driving Auto",
+              "_title": "Time Driving Auto"
             }
           }
         }
@@ -281,9 +301,9 @@
     }
   ],
   "windowGeometry": {
-    "x": -8.0,
-    "y": 0.5714285969734192,
-    "width": 1470.2857666015625,
-    "height": 582.2857055664062
+    "x": -193.0,
+    "y": 67.0,
+    "width": 1386.0,
+    "height": 548.0
   }
 }
